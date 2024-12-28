@@ -62,14 +62,14 @@
         }
 
         .team img {
-    width: 30px; /* Ajuste o tamanho da logo aqui */
-    height: 30px; /* Ajuste o tamanho da logo aqui */
-    margin-right: 10px;
-     }
+            width: 30px; /* Ajuste o tamanho da logo aqui */
+            height: 30px; /* Ajuste o tamanho da logo aqui */
+            margin-right: 10px;
+        }
         
-
-        .date {
-            color: #555;
+        .score {
+            font-weight: bold;
+            color: #333;
         }
 
         table {
@@ -141,7 +141,6 @@
             <img src="https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" alt="Logo do Futebol"> WOLFSBURG
         </h1>
         
-    
         <h2>Jogos Agendados</h2>
         <ul id="gameList"></ul>
 
@@ -153,7 +152,7 @@
                     <th>Time</th>
                     <th>Jogos</th>
                     <th>Pontos</th>
-                                        <th>Vitórias</th>
+                                       <th>Vitórias</th>
                     <th>Empates</th>
                     <th>Derrotas</th>
                 </tr>
@@ -244,7 +243,7 @@
                     <td>10</td>
                     <td><img src="https://via.placeholder.com/30" alt="Time J Logo"> Time J</td>
                     <td>10</td>
-                    <td class="points"></td>
+                                       <td class="points"></td>
                     <td>2</td>
                     <td>4</td>
                     <td>4</td>
@@ -261,7 +260,7 @@
                 <tr>
                     <td>12</td>
                     <td><img src="https://via.placeholder.com/30" alt="Time L Logo"> Time L</td>
-                                        <td>10</td>
+                    <td>10</td>
                     <td class="points"></td>
                     <td>1</td>
                     <td>5</td>
@@ -354,7 +353,7 @@
                     <td>Jogador 3</td>
                     <td>Time C</td>
                     <td>Wolfsburg</td>
-                    <td>€8M</td>
+                                        <td>€8M</td>
                     <td>2023-03-10</td>
                 </tr>
                 <tr>
@@ -375,7 +374,7 @@
         </table>
 
         <h2>Atual Verba de Transferências do Clube</h2>
-               <div class="transfer-info">
+        <div class="transfer-info">
             <p>8.000.000 milhões de euros</p>
         </div>
     </div>
@@ -412,12 +411,12 @@
             });
         }
 
-        // Adicione os jogos aqui
+        // Adicione os jogos aqui com placar
         const games = [
-            { team1: { name: "Time A", logo: "https://via.placeholder.com/30" }, team2: { name: "Time B", logo: "https://via.placeholder.com/30" }, date: "2023-10-01" },
-            { team1: { name: "Time C", logo: "https://via.placeholder.com/30" }, team2: { name: "Time D", logo: "https://via.placeholder.com/30" }, date: "2023-10-02" },
-            { team1: { name: "Time E", logo: "https://via.placeholder.com/30" }, team2: { name: "Time F", logo: "https://via.placeholder.com/30" }, date: "2023-10-03" },
-            { team1: { name: "Time G", logo: "https://via.placeholder.com/30" }, team2: { name: "Time H", logo: "https://via.placeholder.com/30" }, date: "2023-10-04" }
+            { team1: { name: "Time A", logo: "https://via.placeholder.com/30" }, team2: { name: "Time B", logo: "https://via.placeholder.com/30" }, score: "2 - 1" },
+            { team1: { name: "Time C", logo: "https://via.placeholder.com/30" }, team2: { name: "Time D", logo: "https://via.placeholder.com/30" }, score: "1 - 3" },
+            { team1: { name: "Time E", logo: "https://via.placeholder.com/30" }, team2: { name: "Time F", logo: "https://via.placeholder.com/30" }, score: "0 - 0" },
+            { team1: { name: "Time G", logo: "https://via.placeholder.com/30" }, team2: { name: "Time H", logo: "https://via.placeholder.com/30" }, score: "4 - 2" }
         ];
 
         function renderGames() {
@@ -430,10 +429,10 @@
                     <span class="team">
                         <img src="${game.team1.logo}" alt="${game.team1.name} Logo"> ${game.team1.name} 
                     </span>
+                    <span class="score">${game.score}</span>
                     <span class="team">
                         <img src="${game.team2.logo}" alt="${game.team2.name} Logo"> ${game.team2.name} 
                     </span>
-                    <span class="date">${game.date}</span>
                 `;
                 gameList.appendChild(listItem);
             });
@@ -445,7 +444,7 @@
             document.querySelector('.container').classList.toggle('dark-mode');
             const tableHeaders = document.querySelectorAll('th');
             tableHeaders.forEach(th => th.classList.toggle('dark-mode'));
-            const listItems = document.querySelectorAll('li');
+                       const listItems = document.querySelectorAll('li');
             listItems.forEach(li => li.classList.toggle('dark-mode'));
         }
 
