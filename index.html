@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WOLFSBURG</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Adicionando o favicon -->
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -100,6 +101,19 @@
             border-radius: 5px;
         }
 
+        /* Estilos para as zonas de classificação */
+        .champions {
+            background-color: #FFD700; /* Ouro para Champions League */
+        }
+
+        .europa {
+            background-color: #C0C0C0; /* Prata para Europa League */
+        }
+
+        .relegation {
+            background-color: #FF4500; /* Laranja para rebaixamento */
+        }
+
         /* Estilos para o modo escuro */
         body.dark-mode {
             background-color: #333;
@@ -133,6 +147,11 @@
         .btn-toggle:hover {
             background-color: #005f26;
         }
+
+        .legend {
+            margin-top: 20px;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
@@ -141,7 +160,7 @@
             <img src="https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" alt="Logo do Futebol"> WOLFSBURG
         </h1>
         
-        <h2>últimos jogos</h2>
+               <h2>Últimos Jogos</h2>
         <ul id="gameList"></ul>
 
         <h2>Tabela da Bundesliga</h2>
@@ -159,7 +178,7 @@
             </thead>
             <tbody id="bundesligaTable">
                 <tr>
-                    <td>1</td>
+                    <td class="champions">1</td>
                     <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/R7-Lqc_SDxd97uWgoeUQ-g_64x64.png"> RB Leipzig</td>
                     <td>5</td>
                     <td class="points"></td>
@@ -168,7 +187,7 @@
                     <td>0</td>
                 </tr>
                 <tr>
-                    <td>2</td>
+                    <td class="champions">2</td>
                     <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/FZnTSH2rbHFos4BnlWAItw_64x64.png"> Borussia Dortmund</td>
                     <td>5</td>
                     <td class="points"></td>
@@ -177,8 +196,8 @@
                     <td>0</td>
                 </tr>
                 <tr>
-                    <td>3</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png">  Vfl Wolfsburg</td>
+                    <td class="europa">3</td>
+                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png"> Vfl Wolfsburg</td>
                     <td>5</td>
                     <td class="points"></td>
                     <td>3</td>
@@ -186,8 +205,8 @@
                     <td>1</td>
                 </tr>
                 <tr>
-                    <td>4</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/Qc_eb6-lZEDR8ojQmZxFhQ_64x64.png"> Stuttgart </td>
+                    <td class="europa">4</td>
+                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/Qc_eb6-lZEDR8ojQmZxFhQ_64x64.png"> Stuttgart</td>
                     <td>5</td>
                     <td class="points"></td>
                     <td>3</td>
@@ -195,8 +214,8 @@
                     <td>1</td>
                 </tr>
                 <tr>
-                    <td>5</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/-_cmntP5q_pHL7g5LfkRiw_64x64.png"> Bayer Munchen </td>
+                    <td class="europa">5</td>
+                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/-_cmntP5q_pHL7g5LfkRiw_64x64.png"> Bayer Munchen</td>
                     <td>5</td>
                     <td class="points"></td>
                     <td>3</td>
@@ -205,7 +224,7 @@
                 </tr>
                 <tr>
                     <td>6</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/tMFLGl5GGkQXMihhpJVXuw_64x64.png"> Pauli </td>
+                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/tMFLGl5GGkQXMihhpJVXuw_64x64.png"> Pauli</td>
                     <td>5</td>
                     <td class="points"></td>
                     <td>2</td>
@@ -230,7 +249,7 @@
                     <td>0</td>
                     <td>3</td>
                 </tr>
-                <tr>
+                              <tr>
                     <td>9</td>
                     <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/VOizBJPDHnvnSaU3XPVGAw_64x64.png"> Frankfurt</td>
                     <td>5</td>
@@ -285,7 +304,7 @@
                     <td>2</td>
                 </tr>
                 <tr>
-                    <td>15</td>
+                    <td class="relegation">15</td>
                     <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/HFg_gp-vbuL7z1Othoa0ZA_64x64.png"> M'gladbach</td>
                     <td>5</td>
                     <td class="points"></td>
@@ -294,7 +313,7 @@
                     <td>4</td>
                 </tr>
                 <tr>
-                    <td>16</td>
+                    <td class="relegation">16</td>
                     <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/BY9Ihv1GcvZnxQWkPtEBug_64x64.png"> Bochum</td>
                     <td>5</td>
                     <td class="points"></td>
@@ -303,7 +322,7 @@
                     <td>3</td>
                 </tr>
                 <tr>
-                    <td>17</td>
+                    <td class="relegation">17</td>
                     <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/Nqpb8Rl6ShUtB0ClAKRw-g_64x64.png"> Heidenheim</td>
                     <td>5</td>
                     <td class="points"></td>
@@ -312,7 +331,7 @@
                     <td>4</td>
                 </tr>
                 <tr>
-                    <td>18</td>
+                                       <td class="relegation">18</td>
                     <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/v4G9srMr-9IWDhCXiPhAIw_64x64.png"> Werder Bremen</td>
                     <td>5</td>
                     <td class="points"></td>
@@ -353,7 +372,7 @@
                     <td>Jogador 3</td>
                     <td>Time C</td>
                     <td>Wolfsburg</td>
-                                        <td>€8M</td>
+                    <td>€8M</td>
                     <td>2023-03-10</td>
                 </tr>
                 <tr>
@@ -376,6 +395,13 @@
         <h2>Atual Verba de Transferências do Clube</h2>
         <div class="transfer-info">
             <p>8.000.000 milhões de euros</p>
+        </div>
+
+        <div class="legend">
+            <h3>Legenda das Cores</h3>
+            <p><span style="background-color: #FFD700; padding: 5px; color: black;">&nbsp;&nbsp;&nbsp;&nbsp;</span> Champions League</p>
+            <p><span style="background-color: #C0C0C0; padding: 5px; color: black;">&nbsp;&nbsp;&nbsp;&nbsp;</span> Europa League</p>
+            <p><span style="background-color: #FF4500; padding: 5px; color: black;">&nbsp;&nbsp;&nbsp;&nbsp;</span> Rebaixamento</p>
         </div>
     </div>
     <script>
@@ -406,7 +432,7 @@
 
             teams.forEach((team, index) => {
                 const newRow = team.row.cloneNode(true); // Clona a linha original
-                newRow.cells[0].textContent = index + 1; // Atualiza a posição
+                              newRow.cells[0].textContent = index + 1; // Atualiza a posição
                 tbody.appendChild(newRow); // Adiciona a nova linha à tabela
             });
         }
@@ -444,7 +470,7 @@
             document.querySelector('.container').classList.toggle('dark-mode');
             const tableHeaders = document.querySelectorAll('th');
             tableHeaders.forEach(th => th.classList.toggle('dark-mode'));
-                       const listItems = document.querySelectorAll('li');
+            const listItems = document.querySelectorAll('li');
             listItems.forEach(li => li.classList.toggle('dark-mode'));
         }
 
