@@ -153,23 +153,71 @@
         .btn-toggle:hover {
             background-color: #005f26;
         }
+        .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Escondido inicialmente */
+    width: 250px;
+    height: 100%;
+    background-color: #007A33; /* Cor do fundo do menu */
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease; /* Transição suave */
+    z-index: 1000; /* Para garantir que o menu fique acima de outros elementos */
+}
+
+.sidebar h2 {
+    margin: 0 0 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 15px 0;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
     </style>
 </head>
 <body>
+<div class="sidebar" id="sidebar">
+    <h2>Menu</h2>
+    <ul>
+        <li><a href="#historico">História do Clube</a></li>
+        <li><a href="#ultimos-jogos">Últimos Jogos</a></li>
+        <li><a href="#tabela">Tabela da Bundesliga</a></li>
+        <li><a href="#artilharia">Artilharia do Time</a></li>
+        <li><a href="#titulos">Títulos Wolfsburg</a></li>
+        <li><a href="#transferencias">Histórico de Transferências</a></li>
+        <li><a href="#contratos">Contratos com Jogadores</a></li>
+        <li><a href="#verba">Atual Verba de Transferências</a></li>
+    </ul>
+</div>
     <a href="https://chat.whatsapp.com/HgvnG3mMkZMLoVRaH7zg9J" target="_blank" class="whatsapp-button">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
     </a>
-
+  <button class="btn-toggle" id="toggleSidebar">Menu</button>
     <div class="container">
         <h1>
             <img src="https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" alt="Logo do Futebol"> WOLFSBURG
         </h1>
- <h2>História do Clube</h2>
+<h2 id="historico">História do Clube</h2>
             <p>O Wolfsburg, oficialmente conhecido como VfL Wolfsburg, é um clube de futebol alemão fundado em 1945. Sua origem está ligada à construção da cidade de Wolfsburg, que foi criada para abrigar trabalhadores da fábrica da Volkswagen, uma das maiores montadoras do mundo.</p>
             <h3>Marcos Importantes:</h3>
             <ul>
-                <li><strong>Fundação:  </strong>    O clube foi fundado em 12 de setembro de 1945, por funcionários da Volkswagen. Nos primeiros anos, o Wolfsburg focou em competições locais.</li>
-                <li><strong>Subida nas divisões:  </strong>    O Wolfsburg começou a ganhar destaque nos anos 1970 e 1980, subindo pelas divisões do futebol alemão. Em 1997, o clube foi promovido à Bundesliga, a primeira divisão do futebol da Alemanha.</li>
+                <li><strong>Fundação:   </strong>     O clube foi fundado em 12 de setembro de 1945, por funcionários da Volkswagen. Nos primeiros anos, o Wolfsburg focou em competições locais.</li>
+                <li><strong>Subida nas divisões:   </strong>     O Wolfsburg começou a ganhar destaque nos anos 1970 e 1980, subindo pelas divisões do futebol alemão. Em 1997, o clube foi promovido à Bundesliga, a primeira divisão do futebol da Alemanha.</li>
                 <li><strong>Sucesso recente:  </strong>    O auge do clube ocorreu na temporada 2008-2009, quando o Wolfsburg conquistou seu primeiro título da Bundesliga, sob a direção do treinador Felix Magath, com uma equipe liderada pelo atacante Edin Džeko.</li>
                 <li><strong>Copa da Alemanha:  </strong>    Além do campeonato nacional, o clube também teve sucesso na Copa da Alemanha, onde conquistou o título em 2015.</li>
                 <li><strong>Participações internacionais:  </strong>    O Wolfsburg tem historicamente competido em várias edições da Europa League e da Liga dos Campeões da UEFA, consolidando sua presença no futebol europeu.</li>
@@ -178,10 +226,10 @@
             <p>Ao longo dos anos, o Wolfsburg se estabeleceu como uma equipe respeitável no futebol alemão e tem buscado continuar a competir em alto nível tanto nacional quanto internacionalmente.</p>
         </div>
 
-        <h2>Últimos Jogos</h2>
+       <h2 id="ultimos-jogos">Últimos Jogos</h2>
         <ul id="gameList"></ul>
 
-        <h2>Tabela da Bundesliga</h2>
+        <h2 id="tabela">Tabela da Bundesliga</h2>
         <table>
             <thead>
                 <tr>
@@ -360,7 +408,7 @@
             </tbody>
         </table>
 
-                <h2>Artilharia do Time</h2>
+                <h2 id="artilharia">Artilharia do Time</h2>
 <table>
     <thead>
         <tr>
@@ -415,7 +463,7 @@
         </tr>
     </tbody>
 </table>
-<h2>Titulos Wolfsburg</h2>
+<h2 id="titulos">Títulos Wolfsburg</h2>
 <table id="titlesTable">
     <thead>
         <tr>
@@ -452,7 +500,7 @@
         </tr>
     </tbody>
 </table>
-        <h2>Histórico de Transferências</h2>
+       <h2 id="transferencias">Histórico de Transferências</h2>
         <table>
             <thead>
                 <tr>
@@ -494,7 +542,7 @@
                 </tr>
             </tbody>
         </table>
-               <h2>Contratos com jogadores</h2>
+               <h2 id="contratos">Contratos com Jogadores</h2>
         <table>
             <thead>
                 <tbody>
@@ -518,7 +566,7 @@
             </tbody>
         </table>
 
-        <h2>Atual Verba de Transferências do Clube</h2>
+      <h2 id="verba">Atual Verba de Transferências</h2>
         <div class="transfer-info">
             <p> 24.381.372 MILHÕES DE EUROS.</p>
         </div>
@@ -650,6 +698,15 @@ sortTableByTitles();
         renderGames();
         // Calcula os pontos e ordena a tabela ao carregar a página
         calculatePoints();
+
+        document.getElementById('toggleSidebar').addEventListener('click', function() {
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar.style.left === '0px') {
+        sidebar.style.left = '-250px'; // Esconde o menu
+    } else {
+        sidebar.style.left = '0px'; // Mostra o menu
+    }
+});
     </script>
 </body>
 </html>
