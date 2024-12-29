@@ -17,12 +17,9 @@
             top: 20px; /* Distância do topo */
             right: 20px; /* Distância da direita */
             background-color: #25D366; /* Cor de fundo */
-            border-radius: 50%; /* Botão redondo */
-            padding: 15px; /* Espaçamento interno */
+            border-radius: 5px;
+            padding: 10px; /* Espaçamento interno */
             transition: background-color 0.3s;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            border: none;
-            cursor: pointer;
         }
 
         .whatsapp-button:hover {
@@ -34,24 +31,6 @@
             height: 30px; /* Ajuste o tamanho do ícone */
         }
 
-        .menu-button {
-            position: absolute;
-            top: 20px; /* Distância do topo */
-            left: 20px; /* Distância da esquerda */
-            background-color: #007A33; /* Cor do botão */
-            border: none;
-            border-radius: 5px;
-            color: white;
-            padding: 10px 15px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .menu-button:hover {
-            background-color: #005f26; /* Cor mais escura ao passar o mouse */
-        }
-
         .container {
             max-width: 800px;
             margin: auto;
@@ -59,7 +38,6 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            text-align: center; /* Centraliza o texto */
         }
 
         h1 {
@@ -70,27 +48,19 @@
             color: #333;
         }
 
-        .menu {
-            display: none; /* Esconde o menu inicialmente */
-            position: absolute;
-            top: 70px; /* Distância do topo */
-            left: 20px; /* Distância da esquerda */
-            background: #ffffff;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease; /* Transição suave */
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
         }
 
-        .menu a {
-            display: block; /* Cada link ocupa uma linha */
-            margin: 5px 0;
+        nav a {
+            margin: 0 15px;
             text-decoration: none;
             color: #007A33;
             font-weight: bold;
         }
 
-        .menu a:hover {
+        nav a:hover {
             text-decoration: underline;
         }
 
@@ -106,7 +76,6 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
-            margin: auto; /* Centraliza a tabela */
         }
 
         th, td {
@@ -134,14 +103,6 @@
 </head>
 <body>
     <button class="menu-button" onclick="toggleMenu()">☰ Menu</button>
-        <div class="menu" id="menu">
-            <a href="#" onclick="showSection('home'); hideMenu()">História do Clube</a>
-            <a href="#" onclick="showSection('ultimos-jogos'); hideMenu()">Últimos Jogos</a>
-            <a href="#" onclick="showSection('tabela-bundesliga'); hideMenu()">Tabela da Bundesliga</a>
-            <a href="#" onclick="showSection('artilharia'); hideMenu()">Artilharia do Time</a>
-            <a href="#" onclick="showSection('titulos'); hideMenu()">Títulos</a>
-            <a href="#" onclick="showSection('historico-transferencias'); hideMenu()">Histórico de Transferências</a>
-        </div>
     <a href="https://chat.whatsapp.com/HgvnG3mMkZMLoVRaH7zg9J" target="_blank" class="whatsapp-button">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
     </a>
@@ -151,8 +112,14 @@
             <img src="https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" alt="Logo do Futebol"> WOLFSBURG
         </h1>
 
-        <button class="whatsapp-button"</button>
-    
+               <nav>
+            <a href="#" onclick="showSection('home'); hideMenu()">História do Clube</a>
+            <a href="#" onclick="showSection('ultimos-jogos'); hideMenu()">Últimos Jogos</a>
+            <a href="#" onclick="showSection('tabela-bundesliga'); hideMenu()">Tabela da Bundesliga</a>
+            <a href="#" onclick="showSection('artilharia'); hideMenu()">Artilharia do Time</a>
+            <a href="#" onclick="showSection('titulos'); hideMenu()">Títulos</a>
+            <a href="#" onclick="showSection('historico-transferencias'); hideMenu()">Histórico de Transferências</a>
+        </nav>
 
         <div id="home" class="section active">
             <h2>História do Clube</h2>
@@ -179,168 +146,7 @@
                     </tr>
                 </thead>
                 <tbody id="bundesligaTable">
-                    <tr>
-                    <td class="champions">1</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/R7-Lqc_SDxd97uWgoeUQ-g_64x64.png"> RB Leipzig</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>5</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td class="champions">2</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/FZnTSH2rbHFos4BnlWAItw_64x64.png"> Borussia Dortmund</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>4</td>
-                    <td>1</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td class="europa">3</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png"> Vfl Wolfsburg</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>3</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td class="europa">4</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/Qc_eb6-lZEDR8ojQmZxFhQ_64x64.png"> Stuttgart</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>3</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td class="conference">5</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/-_cmntP5q_pHL7g5LfkRiw_64x64.png"> Bayer Munchen</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>3</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/tMFLGl5GGkQXMihhpJVXuw_64x64.png"> Pauli</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/-_DNuqGrrFQ5FUvKjb7zAw_64x64.png"> Mainz 05</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/0zIcXiwD_JGY482DFC28Lw_64x64.png"> Leverkusen</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/VOizBJPDHnvnSaU3XPVGAw_64x64.png"> Frankfurt</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>3</td>
-                    <td>0</td>
-                                       <td>2</td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/zlO6wgTW2QB30eOypHGxDg_64x64.png"> Hoffenheim</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>2</td>
-                    <td>1</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>11</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/gjz1Ml0qpVQuY3leN4z8mQ_64x64.png"> Augsburg</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>12</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/s0YO0sK9qrioMnzJuFGKuw_64x64.png"> Freiburg</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>13</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/zsPvbWQ2kNoiZX3sZXq-Yg_64x64.png"> Union Berlin</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>14</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/9NJC7z1ReBNUIdqTTywvCw_64x64.png"> Holstein Kiel</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>15</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/HFg_gp-vbuL7z1Othoa0ZA_64x64.png"> M'gladbach</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td class="relegation">16</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/BY9Ihv1GcvZnxQWkPtEBug_64x64.png"> Bochum</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td class="relegation">17</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/Nqpb8Rl6ShUtB0ClAKRw-g_64x64.png"> Heidenheim</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td class="relegation">18</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/v4G9srMr-9IWDhCXiPhAIw_64x64.png"> Werder Bremen</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>4</td>
-                </tr>
+                    <!-- Adicione as linhas da tabela aqui -->
                 </tbody>
             </table>
         </div>
@@ -422,7 +228,7 @@
                         <td>Stuttgart</td>
                         <td>Wolfsburg</td>
                         <td>€8MI</td>
-                        <td>LD</td>
+                                               <td>LD</td>
                     </tr>
                     <tr>
                         <td>Kevin P.</td>
