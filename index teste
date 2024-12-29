@@ -379,7 +379,47 @@
                 </tr>
             </thead>
             <tbody id="topScorers">
-                <!-- Tabela de artilharia -->
+                 <tbody id="topScorers">
+        <tr>
+            <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqiuUwGuoaQbmw_nAEAQ_XSF9enfbmtHEhEA&s2" alt="Jogador 1" width="50" height="50"></td>
+            <td>Amoura</td>
+            <td>8</td>
+            <td>11</td>
+            <td>0</td>
+            <td class="participations"></td> <!-- Célula para participações -->
+        </tr>
+        <tr>
+            <td><img src="https://assets.bundesliga.com/player/dfl-obj-0000y4-dfl-clu-000003-dfl-sea-0001k8.png?fit=320,320" alt="Jogador 2" width="50" height="50"></td>
+            <td>Arnold</td>
+            <td>8</td>
+            <td>3</td>
+            <td>0</td>
+            <td class="participations"></td>
+        </tr>
+        <tr>
+            <td><img src="https://assets.bundesliga.com/player/dfl-obj-00007t-dfl-clu-00000v-dfl-sea-0001k8.png?fit=320,320" alt="Jogador 3" width="50" height="50"></td>
+            <td>Volland</td>
+            <td>7</td>
+            <td>3</td>
+            <td>1</td>
+            <td class="participations"></td>
+        </tr>
+        <tr>
+            <td><img src="https://assets.bundesliga.com/player/dfl-obj-j01k33-dfl-clu-000003-dfl-sea-0001k8.png?fit=320,320" alt="Jogador 4" width="50" height="50"></td>
+            <td>Wimmer</td>
+            <td>8</td>
+            <td>1</td>
+            <td>5</td>
+            <td class="participations"></td>
+        </tr>
+        <tr>
+            <td><img src="https://assets.bundesliga.com/player/dfl-obj-0026sk-dfl-clu-00000z-dfl-sea-0001k8.png?fit=320,320" alt="Jogador 5" width="50" height="50"></td>
+            <td>Reese</td>
+            <td>8</td>
+            <td>1</td>
+            <td>5</td>
+            <td class="participations"></td>
+        </tr>
             </tbody>
         </table>
 
