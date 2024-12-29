@@ -134,6 +134,14 @@
 </head>
 <body>
     <button class="menu-button" onclick="toggleMenu()">☰ Menu</button>
+        <div class="menu" id="menu">
+            <a href="#" onclick="showSection('home'); hideMenu()">História do Clube</a>
+            <a href="#" onclick="showSection('ultimos-jogos'); hideMenu()">Últimos Jogos</a>
+            <a href="#" onclick="showSection('tabela-bundesliga'); hideMenu()">Tabela da Bundesliga</a>
+            <a href="#" onclick="showSection('artilharia'); hideMenu()">Artilharia do Time</a>
+            <a href="#" onclick="showSection('titulos'); hideMenu()">Títulos</a>
+            <a href="#" onclick="showSection('historico-transferencias'); hideMenu()">Histórico de Transferências</a>
+        </div>
     <a href="https://chat.whatsapp.com/HgvnG3mMkZMLoVRaH7zg9J" target="_blank" class="whatsapp-button">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
     </a>
@@ -143,15 +151,8 @@
             <img src="https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" alt="Logo do Futebol"> WOLFSBURG
         </h1>
 
-        <button class="whatsapp-button" onclick="toggleMenu()">☰</button>
-        <div class="menu" id="menu">
-                        <a href="#" onclick="showSection('home'); hideMenu()">História do Clube</a>
-            <a href="#" onclick="showSection('ultimos-jogos'); hideMenu()">Últimos Jogos</a>
-            <a href="#" onclick="showSection('tabela-bundesliga'); hideMenu()">Tabela da Bundesliga</a>
-            <a href="#" onclick="showSection('artilharia'); hideMenu()">Artilharia do Time</a>
-            <a href="#" onclick="showSection('titulos'); hideMenu()">Títulos</a>
-            <a href="#" onclick="showSection('historico-transferencias'); hideMenu()">Histórico de Transferências</a>
-        </div>
+        <button class="whatsapp-button"</button>
+    
 
         <div id="home" class="section active">
             <h2>História do Clube</h2>
