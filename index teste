@@ -473,7 +473,34 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Histórico de transferências -->
+                 <tr>
+                    <td>Vnagnoman</td>
+                    <td>Stuttgart</td>
+                    <td>Wolfsburg</td>
+                    <td>€8MI</td>
+                    <td>LD</td>
+                </tr>
+                <tr>
+                    <td>Kevin P.</td>
+                    <td>Wolfsnurg</td>
+                    <td>Fiorentina</td>
+                    <td>€10.7MI</td>
+                    <td>ME</td>
+                </tr>
+                <tr>
+                    <td>Volland</td>
+                    <td>Union Berlim</td>
+                    <td>Wolfsburg</td>
+                    <td>€6.6MI</td>
+                    <td>ATA</td>
+                </tr>
+                <tr>
+                    <td>Fabian</td>
+                    <td>Herta</td>
+                    <td>Wolfsburg</td>
+                    <td>€2M</td>
+                    <td>MC</td>
+                </tr>
             </tbody>
         </table>
 
