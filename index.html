@@ -43,36 +43,31 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
-        h1 img {
-            width: 30px; /* Tamanho da logo */
-            height: 30px; /* Tamanho da logo */
-            margin-right: 10px; /* Espaço entre a logo e o texto */
-        }
+      @media (max-width: 600px) {
+    .container {
+        padding: 10px; /* Reduzir o padding em telas menores */
+    }
 
-        h1 {
-            text-align: center;
-            color: #007A33; /* Cor do Wolfsburg */
-        }
+    .whatsapp-button {
+        top: 10px; /* Ajustar a posição do botão */
+        right: 10px;
+        padding: 8px; /* Reduzir o padding do botão */
+    }
 
-        h2 {
-            text-align: center;
-            color: #333;
-        }
+    h1 img, .team img {
+        width: 25px; /* Reduzir o tamanho das imagens */
+        height: 25px;
+    }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
+    li {
+        flex-direction: column; /* Mudar a direção do flex para coluna */
+        align-items: flex-start; /* Alinhar itens à esquerda */
+    }
 
-        li {
-            background: #e9ecef;
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 5px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .score {
+        margin: 5px 0; /* Adicionar margem entre os elementos */
+    }
+}
 
         .team {
             font-weight: bold;
