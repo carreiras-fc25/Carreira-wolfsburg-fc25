@@ -10,6 +10,7 @@
             background-color: #f4f4f4;
             margin: 0;
             padding: 20px;
+            display: flex;
         }
 
         .whatsapp-button {
@@ -33,7 +34,7 @@
 
         .container {
             max-width: 800px;
-            margin: auto;
+            margin-left: 220px; /* Espaço para o menu lateral */
             background: #ffffff;
             padding: 20px;
             border-radius: 10px;
@@ -51,12 +52,18 @@
         }
 
         nav {
-            text-align: center;
-            margin-bottom: 20px;
+            position: fixed; /* Fixa o menu na lateral */
+            top: 100px; /* Distância do topo */
+            left: 20px; /* Distância da esquerda */
+            background: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         nav a {
-            margin: 0 15px;
+            display: block; /* Cada link ocupa uma linha */
+            margin: 5px 0;
             text-decoration: none;
             color: #007A33;
             font-weight: bold;
@@ -123,153 +130,147 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
     </a>
 
-    <div class="container">
-        <h1>
-            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" alt="Logo do Futebol"> WOLFSBURG
-        </h1>
+    <nav>
+        <a href="#" onclick="showSection('home')">História do Clube</a>
+        <a href="#" onclick="showSection('ultimos-jogos')">Últimos Jogos</a>
+        <a href="#" onclick="showSection('tabela-bundesliga')">Tabela da Bundesliga</a>
+                <a href="#" onclick="showSection('artilharia')">Artilharia do Time</a>
+        <a href="#" onclick="showSection('titulos')">Títulos</a>
+        <a href="#" onclick="showSection('historico-transferencias')">Histórico de Transferências</a>
+    </nav>
 
-        <nav>
-            <a href="#" onclick="showSection('home')">História do Clube</a>
-            <a href="#" onclick="showSection('ultimos-jogos')">Últimos Jogos</a>
-            <a href="#" onclick="showSection('tabela-bundesliga')">Tabela da Bundesliga</a>
-            <a href="#" onclick="showSection('artilharia')">Artilharia do Time</a>
-            <a href="#" onclick="showSection('titulos')">Títulos</a>
-                        <a href="#" onclick="showSection('historico-transferencias')">Histórico de Transferências</a>
-        </nav>
+    <div id="home" class="section active">
+        <h2>História do Clube</h2>
+        <p>O VfL Wolfsburg é um clube de futebol profissional da Alemanha, fundado em 1945. O clube é conhecido por sua forte presença na Bundesliga e por ter conquistado a Bundesliga em 2009.</p>
+    </div>
 
-        <div id="home" class="section active">
-            <h2>História do Clube</h2>
-            <p>O VfL Wolfsburg é um clube de futebol profissional da Alemanha, fundado em 1945. O clube é conhecido por sua forte presença na Bundesliga e por ter conquistado a Bundesliga em 2009.</p>
-        </div>
+    <div id="ultimos-jogos" class="section">
+        <h2>Últimos Jogos</h2>
+        <ul id="gameList"></ul>
+    </div>
 
-        <div id="ultimos-jogos" class="section">
-            <h2>Últimos Jogos</h2>
-            <ul id="gameList"></ul>
-        </div>
+    <div id="tabela-bundesliga" class="section">
+        <h2>Tabela da Bundesliga</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Posição</th>
+                    <th>Time</th>
+                    <th>Jogos</th>
+                    <th>Pontos</th>
+                    <th>Vitórias</th>
+                    <th>Empates</th>
+                    <th>Derrotas</th>
+                </tr>
+            </thead>
+            <tbody id="bundesligaTable">
+                <!-- Adicione as linhas da tabela aqui -->
+            </tbody>
+        </table>
+    </div>
 
-        <div id="tabela-bundesliga" class="section">
-            <h2>Tabela da Bundesliga</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Posição</th>
-                        <th>Time</th>
-                        <th>Jogos</th>
-                        <th>Pontos</th>
-                        <th>Vitórias</th>
-                        <th>Empates</th>
-                        <th>Derrotas</th>
-                    </tr>
-                </thead>
-                <tbody id="bundesligaTable">
-                    <!-- Adicione as linhas da tabela aqui -->
-                </tbody>
-            </table>
-        </div>
+    <div id="artilharia" class="section">
+        <h2>Artilharia do Time</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Foto do Jogador</th>
+                    <th>Nome</th>
+                    <th>Jogos</th>
+                    <th>Gols</th>
+                    <th>Assistências</th>
+                    <th>Participações</th>
+                </tr>
+            </thead>
+            <tbody id="topScorers">
+                <!-- Adicione as linhas da tabela aqui -->
+            </tbody>
+        </table>
+    </div>
 
-        <div id="artilharia" class="section">
-            <h2>Artilharia do Time</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Foto do Jogador</th>
-                        <th>Nome</th>
-                        <th>Jogos</th>
-                        <th>Gols</th>
-                        <th>Assistências</th>
-                        <th>Participações</th>
-                    </tr>
-                </thead>
-                <tbody id="topScorers">
-                    <!-- Adicione as linhas da tabela aqui -->
-                </tbody>
-            </table>
-        </div>
+    <div id="titulos" class="section">
+        <h2>Títulos Wolfsburg</h2>
+        <table id="titlesTable">
+            <thead>
+                <tr>
+                    <th>Competição</th>
+                    <th>Total de Títulos</th>
+                    <th>Ano</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bundesliga</td>
+                    <td>1</td>
+                    <td>2008/2009</td>
+                </tr>
+                <tr>
+                    <td>Pokal</td>
+                    <td>1</td>
+                    <td>2014/2015</td>
+                </tr>
+                <tr>
+                    <td>Champions League</td>
+                    <td>0</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Europa League</td>
+                    <td>0</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Super Cup</td>
+                    <td>1</td>
+                    <td>2015</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-        <div id="titulos" class="section">
-            <h2>Títulos Wolfsburg</h2>
-            <table id="titlesTable">
-                <thead>
-                    <tr>
-                        <th>Competição</th>
-                        <th>Total de Títulos</th>
-                        <th>Ano</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Bundesliga</td>
-                        <td>1</td>
-                        <td>2008/2009</td>
-                    </tr>
-                    <tr>
-                        <td>Pokal</td>
-                        <td>1</td>
-                        <td>2014/2015</td>
-                    </tr>
-                    <tr>
-                        <td>Champions League</td>
-                        <td>0</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>Europa League</td>
-                        <td>0</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>Super Cup</td>
-                        <td>1</td>
-                        <td>2015</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div id="historico-transferencias" class="section">
-            <h2>Histórico de Transferências</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>NOME DO JOGADOR</th>
-                        <th>CLUBE DE ORIGEM</th>
-                        <th>CLUBE DESTINO</th>
-                        <th>VALOR</th>
-                        <th>POSIÇÃO</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Vnagnoman</td>
-                        <td>Stuttgart</td>
-                        <td>Wolfsburg</td>
-                        <td>€8MI</td>
-                        <td>LD</td>
-                    </tr>
-                    <tr>
-                        <td>Kevin P.</td>
-                        <td>Wolfsnurg</td>
-                        <td>Fiorentina</td>
-                        <td>€10.7MI</td>
-                        <td>ME</td>
-                    </tr>
-                    <tr>
-                        <td>Volland</td>
-                        <td>Union Berlim</td>
-                        <td>Wolfsburg</td>
-                        <td>€6.6MI</td>
-                        <td>ATA</td>
-                    </tr>
-                    <tr>
-                                               <td>Fabian</td>
-                        <td>Herta</td>
-                        <td>Wolfsburg</td>
-                        <td>€2M</td>
-                        <td>MC</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <div id="historico-transferencias" class="section">
+        <h2>Histórico de Transferências</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>NOME DO JOGADOR</th>
+                    <th>CLUBE DE ORIGEM</th>
+                    <th>CLUBE DESTINO</th>
+                    <th>VALOR</th>
+                    <th>POSIÇÃO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Vnagnoman</td>
+                    <td>Stuttgart</td>
+                    <td>Wolfsburg</td>
+                    <td>€8MI</td>
+                    <td>LD</td>
+                </tr>
+                <tr>
+                    <td>Kevin P.</td>
+                    <td>Wolfsnurg</td>
+                    <td>Fiorentina</td>
+                    <td>€10.7MI</td>
+                    <td>ME</td>
+                </tr>
+                <tr>
+                    <td>Volland</td>
+                    <td>Union Berlim</td>
+                    <td>Wolfsburg</td>
+                                       <td>€6.6MI</td>
+                    <td>ATA</td>
+                </tr>
+                <tr>
+                    <td>Fabian</td>
+                    <td>Herta</td>
+                    <td>Wolfsburg</td>
+                    <td>€2M</td>
+                    <td>MC</td>
+                </tr>
+            </tbody>
+        </table>
 
         <h2>Atual Verba de Transferências do Clube</h2>
         <div class="transfer-info">
