@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> WOLFSBURG - Contratos com Jogadores</title>
+    <title>WOLFSBURG - Contratos com Jogadores</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -34,15 +34,15 @@
         <table>
             <thead>
                 <tr>
-                    <th>FOTO DO JOGADOR</th>                      
+                    <th>FOTO DO JOGADOR</th>
                     <th>NOME DO JOGADOR</th>
                     <th>TEMPO DE CONTRATO</th>
                     <th>SALÁRIO</th>
                     <th>VALOR DO JOGADOR</th>
                     <th>MULTA RESCISÓRIA</th>
-                </tr> 
+                </tr>
             </thead>
-            <tbody>
+            <tbody id="contractsTable">
                 <tr>
                     <td><img src="https://assets.bundesliga.com/player/dfl-obj-0026sk-dfl-clu-00000z-dfl-sea-0001k8.png?fit=320,320" alt="Jogador 5" width="50" height="50"></td>
                     <td>Reese</td>
@@ -143,6 +143,34 @@
                 sidebar.style.left = '0px'; // Mostra o menu
             }
         });
+
+        function sortContractsBySalary() {
+            const rows = Array.from(document.querySelectorAll('#contractsTable tr'));
+            const contracts = [];
+
+            rows.forEach(row => {
+                const salaryText = row.cells[3].textContent; // Salário
+                const salary = parseFloat(salaryText.replace('€', '').replace('M', '')) * 1e6; // Converte para número
+                contracts.push({
+                    row: row,
+                    salary: salary
+                });
+            });
+
+            // Ordena os contratos com base no salário
+            contracts.sort((a, b) => b.salary - a.salary);
+
+            // Atualiza a tabela com a nova ordem
+            const tbody = document.querySelector('#contractsTable');
+            tbody.innerHTML = ''; // Limpa o conteúdo atual
+
+            contracts.forEach(contract => {
+                tbody.appendChild(contract.row); // Adiciona a nova ordem das linhas
+            });
+        }
+
+        // Chama a função para ordenar os contratos ao carregar a página
+        window.onload = sortContractsBySalary;
     </script>
 </body>
 </html>
