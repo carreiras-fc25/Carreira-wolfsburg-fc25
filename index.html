@@ -500,88 +500,118 @@
         </div>
     </div> <!-- Fecha a div com a classe "container" -->
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Função para mostrar a seção ativa
-            window.showSection = function(sectionId) {
-                const sections = document.querySelectorAll('.section');
-                sections.forEach(section => {
-                    section.classList.remove('active');
-                });
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Função para mostrar a seção ativa
+        window.showSection = function(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
 
-                const activeSection = document.getElementById(sectionId);
-                if (activeSection) {
-                    activeSection.classList.add('active');
-                } else {
-                    console.error(`Seção com ID "${sectionId}" não encontrada.`);
+            const activeSection = document.getElementById(sectionId);
+            if (activeSection) {
+                activeSection.classList.add('active');
+            } else {
+                console.error(`Seção com ID "${sectionId}" não encontrada.`);
+            }
+        }
+
+        // Função para alternar a exibição do menu
+        window.toggleMenu = function() {
+            const menu = document.getElementById('menu');
+            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        }
+
+        // Função para ocultar o menu
+        window.hideMenu = function() {
+            const menu = document.getElementById('menu');
+            menu.style.display = 'none';
+        }
+
+        // Inicializa a página mostrando a seção "home"
+        showSection('home');
+
+        // Função para calcular as participações em gols e atualizar a tabela de artilharia
+        function updateTopScorers() {
+            const topScorers = document.querySelectorAll('#topScorers tr');
+            topScorers.forEach(row => {
+                const goals = parseInt(row.cells[3].textContent) || 0; // Gols
+                const assists = parseInt(row.cells[4].textContent) || 0; // Assistências
+                const participationsCell = row.querySelector('.participations');
+                if (participationsCell) {
+                    participationsCell.textContent = goals + assists; // Atualiza participações
                 }
-            }
+            });
+        }
 
-            // Função para alternar a exibição do menu
-            window.toggleMenu = function() {
-                const menu = document.getElementById('menu');
-                menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-            }
+        // Função para atualizar a tabela da Bundesliga
+        function updateBundesligaTable() {
+            const rows = document.querySelectorAll('#bundesligaTable tr');
+            rows.forEach(row => {
+                const wins = parseInt(row.cells[4].textContent) || 0; // Vitórias
+                const draws = parseInt(row.cells[5].textContent) || 0; // Empates
+                const points = (wins * 3) + (draws * 1); // Cálculo dos pontos
+                const pointsCell = row.querySelector('.points');
+                if (pointsCell) {
+                    pointsCell.textContent = points; // Atualiza a coluna de pontos
+                }
+            });
+        }
 
-            // Função para ocultar o menu
-            window.hideMenu = function() {
-                const menu = document.getElementById('menu');
-                menu.style.display = 'none';
-            }
+        // Função para atualizar a tabela de títulos
+        function updateTitlesTable() {
+            const titlesTable = document.getElementById('titlesTable');
+            const rows = titlesTable.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                const competition = row.cells[0].textContent; // Competição
+                let totalTitles = 0;
 
-            // Inicializa a página mostrando a seção "home"
-            showSection('home');
+                // Lógica para atualizar o total de títulos com base na competição
+                if (competition === 'Bundesliga') {
+                    totalTitles = 1; // Exemplo: 1 título da Bundesliga
+                } else if (competition === 'Pokal') {
+                    totalTitles = 1; // Exemplo: 1 título da Pokal
+                } else if (competition === 'Super Cup') {
+                    totalTitles = 1; // Exemplo: 1 título do Super Cup
+                }
 
-            // Função para calcular os pontos
-            function calculatePoints() {
-                const rows = document.querySelectorAll('#bundesligaTable tr');
-                rows.forEach(row => {
-                    const wins = parseInt(row.cells[4].textContent) || 0; // Vitórias
-                    const draws = parseInt(row.cells[5].textContent) || 0; // Empates
-                    const points = (wins * 3) + (draws * 1); // Cálculo dos pontos
-                    const pointsCell = row.querySelector('.points');
-                    if (pointsCell) {
-                        pointsCell.textContent = points; // Atualiza a coluna de pontos
-                    }
-                });
-            }
+                row.cells[1].textContent = totalTitles; // Atualiza o total de títulos
+            });
+        }
 
-            // Chama a função para calcular os pontos ao carregar a página
-            calculatePoints();
+        // Chama as funções após carregar a página
+        updateTopScorers();
+        updateBundesligaTable();
+        updateTitlesTable();
 
-            // Adicione os jogos aqui com placar
-            const games = [
-                { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Stuttgart", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/Qc_eb6-lZEDR8ojQmZxFhQ_64x64.png" }, score: "1 - 0" },
-                { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Bayer Leverkusen", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/0zIcXiwD_JGY482DFC28Lw_64x64.png" }, score: "2 - 1" },
-                { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Frankfurt", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/VOizBJPDHnvnSaU3XPVGAw_64x64.png" }, score: "6 - 2" },
-                { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Holstein Kiel", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/9NJC7z1ReBNUIdqTTywvCw_64x64.png" }, score: "2 - 2" },
-                { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Bayer München", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/-_cmntP5q_pHL7g5LfkRiw_64x64.png" }, score: "1 - 2" }
-            ];
+        // Adicione os jogos aqui com placar
+        const games = [
+            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Stuttgart", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/Qc_eb6-lZEDR8ojQmZxFhQ_64x64.png" }, score: "1 - 0" },
+            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Bayer Leverkusen", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/0zIcXiwD_JGY482DFC28Lw_64x64.png" }, score: "2 - 1" },
+            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Borussia Dortmund", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/0zIcXiwD_JGY482DFC28Lw_64x64.png" }, score: "3 - 2" }
+        ];
 
-            // Função para exibir os jogos
-            function displayGames() {
-                const gameListElement = document.getElementById('gameList');
-                gameListElement.innerHTML = ''; // Limpa a lista antes de adicionar novos jogos
+        // Função para exibir os jogos
+        function displayGames() {
+            const gamesContainer = document.getElementById('gamesContainer');
+            games.forEach(game => {
+                const gameElement = document.createElement('div');
+                gameElement.classList.add('game');
+                gameElement.innerHTML = `
+                    <img src="${game.team1.logo}" alt="${game.team1.name}" />
+                    <span>${game.team1.name}</span>
+                    <strong>${game.score}</strong>
+                    <span>${game.team2.name}</span>
+                    <img src="${game.team2.logo}" alt="${game.team2.name}" />
+                `;
+                gamesContainer.appendChild(gameElement);
+            });
+        }
 
-                games.forEach(game => {
-                    const listItem = document.createElement('li');
-                    listItem.style.padding = '10px';
-                    listItem.style.borderBottom = '1px solid #ddd';
-
-                    listItem.innerHTML = `
-                        <img src="${game.team1.logo}" alt="${game.team1.name}" style="width: 30px; vertical-align: middle;">
-                        <strong>${game.team1.name}</strong> ${game.score} 
-                        <strong>${game.team2.name}</strong>
-                        <img src="${game.team2.logo}" alt="${game.team2.name}" style="width: 30px; vertical-align: middle;">
-                    `;
-
-                    gameListElement.appendChild(listItem);
-                });
-            }
-
-            // Chama a função para exibir os jogos ao carregar a página
-            displayGames();
-        });
-    </script>
+        // Chama a função para exibir os jogos
+        displayGames();
+    });
+</script>
 </body>
 </html>
