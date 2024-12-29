@@ -357,7 +357,7 @@
             <td>Volland</td>
             <td>7</td>
             <td>3</td>
-            <td></td>
+            <td>1</td>
             <td class="participations"></td>
         </tr>
         <tr>
@@ -380,7 +380,7 @@
 </table>
 
         <h2>Títulos do Clube</h2>
-<table>
+<table id="titlesTable">
     <thead>
         <tr>
             <th>Competição</th>
@@ -563,6 +563,25 @@ updateParticipations();
                 gameList.appendChild(listItem);
             });
         }
+
+        function sortTableByTitles() {
+    const table = document.getElementById("titlesTable");
+    const rows = Array.from(table.rows).slice(1); // Exclude header row
+
+    rows.sort((a, b) => {
+        const titleA = parseInt(a.cells[1].innerText); // Get titles from the second column
+        const titleB = parseInt(b.cells[1].innerText);
+        return titleB - titleA; // Sort in descending order
+    });
+
+    // Append sorted rows back to the table body
+    const tbody = table.querySelector("tbody");
+    tbody.innerHTML = ""; // Clear existing rows
+    rows.forEach(row => tbody.appendChild(row)); // Append sorted rows
+}
+
+// Call the function to sort the table
+sortTableByTitles();
 
         // Função para alternar entre modo claro e escuro
         function toggleDarkMode() {
