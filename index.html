@@ -152,11 +152,11 @@
 
         .btn-toggle:hover {
             background-color: #005f26;
-        }
+               }
     </style>
 </head>
 <body>
-       <a href="https://chat.whatsapp.com/HgvnG3mMkZMLoVRaH7zg9J" target="_blank" class="whatsapp-button">
+    <a href="https://chat.whatsapp.com/HgvnG3mMkZMLoVRaH7zg9J" target="_blank" class="whatsapp-button">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
     </a>
 
@@ -258,7 +258,27 @@
     </div>
     <script src="data.js"></script>
     <script>
-        // Função para calcular os pontos
+        // Função para renderizar os jogos
+        function renderGames() {
+            const gameList = document.getElementById('gameList');
+            gameList.innerHTML = '';
+
+            games.forEach(game => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <span class="team">
+                        <img src="${game.team1.logo}" alt="${game.team1.name} Logo"> ${game.team1.name} 
+                    </span>
+                    <span class="score">${game.score}</span>
+                    <span class="team">
+                        <img src="${game.team2.logo}" alt="${game.team2.name} Logo"> ${game.team2.name} 
+                    </span>
+                `;
+                gameList.appendChild(listItem);
+            });
+        }
+
+               // Função para calcular os pontos
         function calculatePoints() {
             const rows = document.querySelectorAll('#bundesligaTable tr');
             const teams = [];
@@ -276,7 +296,7 @@
                 });
             });
 
-                        // Ordena as equipes com base nos pontos
+            // Ordena as equipes com base nos pontos
             teams.sort((a, b) => b.points - a.points);
 
             // Atualiza a tabela com a nova ordem
@@ -290,7 +310,8 @@
             });
         }
 
-        function updateParticipations() { // Função para atualizar a tabela de artilharia
+        // Função para atualizar as participações em gols
+        function updateParticipations() {
             const rows = document.querySelectorAll('#topScorers tr');
             const players = [];
 
@@ -314,7 +335,7 @@
             const tbody = document.getElementById('topScorers');
             tbody.innerHTML = ''; // Limpa o conteúdo atual
 
-            players.forEach((player) => {
+            players.forEach(player => {
                 const newRow = player.row.cloneNode(true); // Clona a linha original
                 tbody.appendChild(newRow); // Adiciona a nova linha à tabela
             });
@@ -322,9 +343,6 @@
 
         // Chama as funções para renderizar as tabelas ao carregar a página
         renderGames();
-        renderBundesligaTable();
-        renderTopScorers();
-        renderTransferHistory();
         calculatePoints(); // Calcula os pontos e ordena a tabela
         updateParticipations(); // Atualiza as participações dos jogadores
     </script>
