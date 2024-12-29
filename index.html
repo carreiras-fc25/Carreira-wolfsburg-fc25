@@ -141,7 +141,7 @@
             <img src="https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" alt="Logo do Futebol"> WOLFSBURG
         </h1>
         
-               <h2>Últimos Jogos</h2>
+        <h2>Últimos Jogos</h2>
         <ul id="gameList"></ul>
 
         <h2>Tabela da Bundesliga</h2>
@@ -153,7 +153,7 @@
                     <th>Jogos</th>
                     <th>Pontos</th>
                     <th>Vitórias</th>
-                    <th>Empates</th>
+                                        <th>Empates</th>
                     <th>Derrotas</th>
                 </tr>
             </thead>
@@ -224,7 +224,7 @@
                 <tr>
                     <td>8</td>
                     <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/0zIcXiwD_JGY482DFC28Lw_64x64.png"> Leverkusen</td>
-                                       <td>5</td>
+                    <td>5</td>
                     <td class="points"></td>
                     <td>2</td>
                     <td>0</td>
@@ -237,7 +237,7 @@
                     <td class="points"></td>
                     <td>3</td>
                     <td>0</td>
-                    <td>2</td>
+                                       <td>2</td>
                 </tr>
                 <tr>
                     <td>10</td>
@@ -310,7 +310,8 @@
                     <td>0</td>
                     <td>1</td>
                     <td>4</td>
-                               <tr>
+                </tr>
+                <tr>
                     <td class="relegation">18</td>
                     <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/v4G9srMr-9IWDhCXiPhAIw_64x64.png"> Werder Bremen</td>
                     <td>5</td>
@@ -322,6 +323,56 @@
             </tbody>
         </table>
         
+                <h2>Artilharia da Bundesliga</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Foto do Jogador</th>
+                    <th>Nome</th>
+                    <th>Jogos</th>
+                    <th>Gols</th>
+                    <th>Assistências</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="https://via.placeholder.com/30" alt="Jogador 1"></td>
+                    <td>Jogador 1</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img src="https://via.placeholder.com/30" alt="Jogador 2"></td>
+                    <td>Jogador 2</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><img src="https://via.placeholder.com/30" alt="Jogador 3"></td>
+                    <td>Jogador 3</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td><img src="https://via.placeholder.com/30" alt="Jogador 4"></td>
+                    <td>Jogador 4</td>
+                    <td>5</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><img src="https://via.placeholder.com/30" alt="Jogador 5"></td>
+                    <td>Jogador 5</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+
         <h2>Histórico de Transferências</h2>
         <table>
             <thead>
@@ -352,7 +403,7 @@
                     <td>Jogador 3</td>
                     <td>Time C</td>
                     <td>Wolfsburg</td>
-                                        <td>€8M</td>
+                    <td>€8M</td>
                     <td>2023-03-10</td>
                 </tr>
                 <tr>
@@ -386,7 +437,7 @@
             rows.forEach(row => {
                 const wins = parseInt(row.cells[4].textContent); // Vitórias
                 const draws = parseInt(row.cells[5].textContent); // Empates
-                const points = (wins * 3) + (draws * 1); // Cálculo dos pontos
+                               const points = (wins * 3) + (draws * 1); // Cálculo dos pontos
                 row.querySelector('.points').textContent = points; // Atualiza a coluna de pontos
 
                 // Adiciona os dados da equipe ao array
@@ -443,7 +494,7 @@
             document.querySelector('.container').classList.toggle('dark-mode');
             const tableHeaders = document.querySelectorAll('th');
             tableHeaders.forEach(th => th.classList.toggle('dark-mode'));
-                        const listItems = document.querySelectorAll('li');
+            const listItems = document.querySelectorAll('li');
             listItems.forEach(li => li.classList.toggle('dark-mode'));
         }
 
@@ -454,3 +505,4 @@
     </script>
 </body>
 </html>
+        
