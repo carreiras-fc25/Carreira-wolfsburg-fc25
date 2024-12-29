@@ -49,7 +49,7 @@
                     <td>8</td>
                     <td>11</td>
                     <td>0</td>
-                    <td class="participations"></td> <!-- Célula para participações -->
+                    < <td class="participations"></td> <!-- Célula para participações -->
                 </tr>
                 <tr>
                     <td><img src="https://assets.bundesliga.com/player/dfl-obj-0000y4-dfl-clu-000003-dfl-sea-0001k8.png?fit=320,320" alt="Jogador 2" width="50" height="50"></td>
@@ -68,7 +68,7 @@
                     <td class="participations"></td>
                 </tr>
                 <tr>
-                    <td><img src="https://assets.bundesliga.com/player/dfl-obj-j01k33-dfl-clu-000003-dfl-sea-0001k8.png?fit=320,320" alt="Jog ador 4" width="50" height="50"></td>
+                    <td><img src="https://assets.bundesliga.com/player/dfl-obj-j01k33-dfl-clu-000003-dfl-sea-0001k8.png?fit=320,320" alt="Jogador 4" width="50" height="50"></td>
                     <td>Wimmer</td>
                     <td>8</td>
                     <td>2</td>
@@ -107,8 +107,35 @@
             });
         }
 
-        // Chame a função para calcular as participações ao carregar a página
-        window.onload = calculateParticipations;
+        function sortPlayersByParticipations() {
+            const rows = Array.from(document.querySelectorAll('#topScorers tr'));
+            const players = [];
+
+            rows.forEach(row => {
+                const participations = parseInt(row.querySelector('.participations').textContent) || 0; // Participações
+                players.push({
+                    row: row,
+                    participations: participations
+                });
+            });
+
+            // Ordena os jogadores com base nas participações
+            players.sort((a, b) => b.participations - a.participations);
+
+            // Atualiza a tabela com a nova ordem
+            const tbody = document.getElementById('topScorers');
+            tbody.innerHTML = ''; // Limpa o conteúdo atual
+
+            players.forEach(player => {
+                tbody.appendChild(player.row); // Adiciona a nova linha à tabela
+            });
+        }
+
+        // Chame a função para calcular as participações e reposicionar os jogadores ao carregar a página
+        window.onload = function() {
+            calculateParticipations();
+            sortPlayersByParticipations();
+        };
     </script>
 </body>
 </html>
