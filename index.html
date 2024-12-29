@@ -18,17 +18,19 @@
             position: absolute;
             top: 20px; /* Distância do topo */
             right: 20px; /* Distância da direita */
-            padding: 10px 20px;
-            background-color: #25D366; /* Cor do WhatsApp */
-            color: white;
-            text-decoration: none;
+            background-color: #25D366; /* Cor de fundo */
             border-radius: 5px;
-            font-weight: bold;
+            padding: 10px; /* Espaçamento interno */
             transition: background-color 0.3s;
         }
 
         .whatsapp-button:hover {
             background-color: #128C7E; /* Cor mais escura ao passar o mouse */
+        }
+
+        .whatsapp-icon {
+            width: 30px; /* Ajuste o tamanho do ícone */
+            height: 30px; /* Ajuste o tamanho do ícone */
         }
 
         .container {
@@ -151,10 +153,12 @@
         .btn-toggle:hover {
             background-color: #005f26;
         }
-   </style>
+    </style>
 </head>
 <body>
-    <a href="https://chat.whatsapp.com/HgvnG3mMkZMLoVRaH7zg9J" target="_blank" class="whatsapp-button">Entrar no Grupo do WhatsApp</a>
+    <a href="https://chat.whatsapp.com/HgvnG3mMkZMLoVRaH7zg9J" target="_blank" class="whatsapp-button">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+    </a>
 
     <div class="container">
         <h1>
