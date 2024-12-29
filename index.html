@@ -11,6 +11,24 @@
             margin: 0;
             padding: 20px;
             transition: background-color 0.3s, color 0.3s;
+            position: relative; /* Necessário para o posicionamento absoluto do botão */
+        }
+
+        .whatsapp-button {
+            position: absolute;
+            top: 20px; /* Distância do topo */
+            right: 20px; /* Distância da direita */
+            padding: 10px 20px;
+            background-color: #25D366; /* Cor do WhatsApp */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #128C7E; /* Cor mais escura ao passar o mouse */
         }
 
         .container {
@@ -133,12 +151,14 @@
         .btn-toggle:hover {
             background-color: #005f26;
         }
-    </style>
+   </style>
 </head>
 <body>
+    <a href="https://chat.whatsapp.com/HgvnG3mMkZMLoVRaH7zg9J" target="_blank" class="whatsapp-button">Entrar no Grupo do WhatsApp</a>
+
     <div class="container">
         <h1>
-            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" alt="Logo do Futebol"> WOLFSBURG - ROGER SCHMIDT
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" alt="Logo do Futebol"> WOLFSBURG
         </h1>
         
         <h2>Últimos Jogos</h2>
