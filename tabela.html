@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="sidebar" id=" sidebar">
+    <div class="sidebar" id="sidebar">
         <h2>Menu</h2>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -48,7 +48,7 @@
                     <td class="champions">1</td>
                     <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/R7-Lqc_SDxd97uWgoeUQ-g_64x64.png"> RB Leipzig</td>
                     <td>5</td>
-                    <td class="points"></td>
+                    <td class="points">0</td> <!-- Inicialmente 0, será atualizado -->
                     <td>5</td>
                     <td>0</td>
                     <td>0</td>
@@ -57,7 +57,7 @@
                     <td class="champions">2</td>
                     <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/FZnTSH2rbHFos4BnlWAItw_64x64.png"> Borussia Dortmund</td>
                     <td>5</td>
-                    <td class="points"></td>
+                    <td class="points">0</td> <!-- Inicialmente 0, será atualizado -->
                     <td>4</td>
                     <td>1</td>
                     <td>0</td>
@@ -66,7 +66,7 @@
                     <td class="europa">3</td>
                     <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png"> Vfl Wolfsburg</td>
                     <td>5</td>
-                    <td class="points"></td>
+                    <td class="points">0</td> <!-- Inicialmente 0, será atualizado -->
                     <td>3</td>
                     <td>1</td>
                     <td>1</td>
@@ -75,21 +75,21 @@
                     <td class="europa">4</td>
                     <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/Qc_eb6-lZEDR8ojQmZxFhQ_64x64.png"> Stuttgart</td>
                     <td>5</td>
-                    <td class="points"></td>
-                    <td>3</td>
-                    <td>1</td>
+                    <td class="points">0</td> <!-- Inicialmente 0, será atualizado -->
+                    <td>2</td>
+                    <td>2</td>
                     <td>1</td>
                 </tr>
                 <tr>
-                    <td class="conference">5</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/-_cmntP5q_pHL7g5LfkRiw_64x64.png"> Bayer Munchen</td>
+                    <td class="europa">5</td>
+                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/8g1g1g1g1g1g1g1g1g1g1g_64x64.png"> Bayer Leverkusen</td>
                     <td>5</td>
-                    <td class="points"></td>
-                    <td>3</td>
+                    <td class="points">0</td> <!-- Inicialmente 0, será atualizado -->
+                    <td>2</td>
                     <td>1</td>
-                    <td>1</td>
+                    <td>2</td>
                 </tr>
-                <tr>
+                  <tr>
                     <td>6</td>
                     <td><img src="https://ssl.gstatic .com/onebox/media/sports/logos/tMFLGl5GGkQXMihhpJVXuw_64x64.png"> Pauli</td>
                     <td>5</td>
@@ -219,7 +219,6 @@
             }
         });
 
-        // Função para calcular os pontos
         function calculatePoints() {
             const rows = document.querySelectorAll('#bundesligaTable tr');
             const teams = [];
@@ -245,14 +244,14 @@
             tbody.innerHTML = ''; // Limpa o conteúdo atual
 
             teams.forEach((team, index) => {
-                const newRow = team.row.cloneNode(true); // Clona a linha original
+                const newRow = team.row.cloneNode(true);
                 newRow.cells[0].textContent = index + 1; // Atualiza a posição
-                tbody.appendChild(newRow); // Adiciona a nova linha à tabela
+                tbody.appendChild(newRow);
             });
         }
 
-        // Chama a função para calcular os pontos ao carregar a página
-        calculatePoints();
+        // Chame a função para calcular os pontos ao carregar a página
+        window.onload = calculatePoints;
     </script>
 </body>
 </html>
