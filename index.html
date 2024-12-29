@@ -152,11 +152,11 @@
 
         .btn-toggle:hover {
             background-color: #005f26;
-               }
+        }
     </style>
 </head>
 <body>
-    <a href="https://chat.whatsapp.com/HgvnG3mMkZMLoVRaH7zg9J" target="_blank" class="whatsapp-button">
+       <a href="https://chat.whatsapp.com/HgvnG3mMkZMLoVRaH7zg9J" target="_blank" class="whatsapp-button">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
     </a>
 
@@ -287,7 +287,10 @@
                 const wins = parseInt(row.cells[4].textContent); // Vitórias
                 const draws = parseInt(row.cells[5].textContent); // Empates
                 const points = (wins * 3) + (draws * 1); // Cálculo dos pontos
-                row.querySelector('.points').textContent = points; // Atualiza a coluna de pontos
+                const pointsCell = document.createElement('td'); // Cria uma nova célula para os pontos
+                pointsCell.className = 'points'; // Adiciona a classe 'points'
+                pointsCell.textContent = points; // Define o texto da célula
+                row.appendChild(pointsCell); // Adiciona a célula à linha
 
                 // Adiciona os dados da equipe ao array
                 teams.push({
