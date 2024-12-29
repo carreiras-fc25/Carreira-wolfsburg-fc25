@@ -511,7 +511,124 @@
     </div>
 
     <script>
-        // Funções JavaScript para calcular pontos, atualizar participações, renderizar jogos, etc.
+          // Função para calcular os pontos
+        function calculatePoints() {
+            const rows = document.querySelectorAll('#bundesligaTable tr');
+            const teams = [];
+
+            rows.forEach(row => {
+                const wins = parseInt(row.cells[4].textContent); // Vitórias
+                const draws = parseInt(row.cells[5].textContent); // Empates
+                               const points = (wins * 3) + (draws * 1); // Cálculo dos pontos
+                row.querySelector('.points').textContent = points; // Atualiza a coluna de pontos
+
+                // Adiciona os dados da equipe ao array
+                teams.push({
+                    row: row,
+                    points: points
+                });
+            });
+
+            // Ordena as equipes com base nos pontos
+            teams.sort((a, b) => b.points - a.points);
+
+            // Atualiza a tabela com a nova ordem
+            const tbody = document.getElementById('bundesligaTable');
+            tbody.innerHTML = ''; // Limpa o conteúdo atual
+
+            teams.forEach((team, index) => {
+                const newRow = team.row.cloneNode(true); // Clona a linha original
+                newRow.cells[0].textContent = index + 1; // Atualiza a posição
+                tbody.appendChild(newRow); // Adiciona a nova linha à tabela
+            });
+        }
+
+        function updateParticipations() {   // funçao de atualizar tabela artilharia
+    const rows = document.querySelectorAll('#topScorers tr');
+    const players = [];
+
+    rows.forEach(row => {
+        const goals = parseInt(row.cells[3].textContent); // Gols
+        const assists = parseInt(row.cells[4].textContent); // Assistências
+        const participations = goals + assists; // Cálculo de participações
+        row.querySelector('.participations').textContent = participations; // Atualiza a coluna de participações
+
+        // Adiciona os dados do jogador ao array
+        players.push({
+            row: row,
+            participations: participations
+        });
+    });
+
+    // Ordena os jogadores com base nas participações
+    players.sort((a, b) => b.participations - a.participations);
+
+    // Atualiza a tabela com a nova ordem
+    const tbody = document.getElementById('topScorers');
+    tbody.innerHTML = ''; // Limpa o conteúdo atual
+
+    players.forEach((player, index) => {
+        const newRow = player.row.cloneNode(true); // Clona a linha original
+        tbody.appendChild(newRow); // Adiciona a nova linha à tabela
+    });
+}
+
+// Chama a função para atualizar as participações ao carregar a página
+updateParticipations();
+
+        // Adicione os jogos aqui com placar
+        const games = [
+            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Stuttgart", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/Qc_eb6-lZEDR8ojQmZxFhQ_64x64.png" }, score: "1 - 0" },
+            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Bayer Leverkusen", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/0zIcXiwD_JGY482DFC28Lw_64x64.png" }, score: "2 - 1" },
+            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Frankfurt", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/VOizBJPDHnvnSaU3XPVGAw_64x64.png" }, score: "6 - 2" },
+            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Holstein Kiel", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/9NJC7z1ReBNUIdqTTywvCw_64x64.png" }, score: "2 - 2" },
+            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Bayer München", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/-_cmntP5q_pHL7g5LfkRiw_64x64.png" }, score: "1 - 2" }
+        ];
+
+        function renderGames() {
+            const gameList = document.getElementById('gameList');
+            gameList.innerHTML = '';
+
+            games.forEach(game => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <span class="team">
+                        <img src="${game.team1.logo}" alt="${game.team1.name} Logo"> ${game.team1.name} 
+                    </span>
+                    <span class="score">${game.score}</span>
+                    <span class="team">
+                        <img src="${game.team2.logo}" alt="${game.team2.name} Logo"> ${game.team2.name} 
+                    </span>
+                `;
+                gameList.appendChild(listItem);
+            });
+        }
+
+        function sortTableByTitles() {
+    const table = document.getElementById("titlesTable");
+    const rows = Array.from(table.rows).slice(1); // Exclude header row
+
+    rows.sort((a, b) => {
+        const titleA = parseInt(a.cells[1].innerText); // Get titles from the second column
+        const titleB = parseInt(b.cells[1].innerText);
+        return titleB - titleA; // Sort in descending order
+    });
+
+    // Append sorted rows back to the table body
+    const tbody = table.querySelector("tbody");
+    tbody.innerHTML = ""; // Clear existing rows
+    rows.forEach(row => tbody.appendChild(row)); // Append sorted rows
+}
+
+// Call the function to sort the table
+sortTableByTitles();
+
+      
+
+        // Renderiza os jogos ao carregar a página
+        renderGames();
+        // Calcula os pontos e ordena a tabela ao carregar a página
+        calculatePoints();
     </script>
 </body>
 </html>
