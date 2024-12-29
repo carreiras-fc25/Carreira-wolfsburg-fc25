@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOLFSBURG - Histórico de Transferências</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="historico.html">História do Clube</a></li>
+            <li><a href="ultimos-jogos.html">Últimos Jogos</a></li>
+            <li><a href="tabela.html">Tabela da Bundesliga</a></li>
+            <li><a href="artilharia.html">Artilharia do Time</a></li>
+            <li><a href="titulos.html">Títulos Wolfsburg</a></li>
+            <li><a href="transferencias.html">Histórico de Transferências</a></li>
+            <li><a href="contratos.html">Contratos com Jogadores</a></li>
+            <li><a href="verba.html">Atual Verba de Transferências</a></li>
+        </ul>
+    </div>
+    <a href="https://chat.whatsapp.com/HgvnG3mMkZMLoVRaH7zg9J" target="_blank" class="whatsapp-button">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+    </a>
+    <button class="btn-toggle" id="toggleSidebar">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
+    <div class="container">
+        <h1>Histórico de Transferências</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>NOME DO JOGADOR</th>
+                    <th>CLUBE DE ORIGEM</th>
+                    <th>CLUBE DESTINO</th>
+                    <th>VALOR</th>
+                    <th>POSIÇÃO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Vnagnoman</td>
+                    <td>Stuttgart</td>
+                    <td>Wolfsburg</td>
+                    <td>€8MI</td>
+                    <td>LD</td>
+                </tr>
+                <tr>
+                    <td>Kevin P.</td>
+                    <td>Wolfsnurg</td>
+                    <td>Fiorentina</td>
+                    <td>€10.7MI</td>
+                    <td>ME</td>
+                </tr>
+                <tr>
+                    <td>Volland</td>
+                    <td>Union Berlim</td>
+                    <td>Wolfsburg</td>
+                    <td>€6.6MI</td>
+                    <td>ATA</td>
+                </tr>
+                <tr>
+                    <td>Fabian</td>
+                    <td>Herta</td>
+                    <td>Wolfsburg</td>
+                    <td>€2M</td>
+                    <td>MC</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        document.getElementById('toggleSidebar').addEventListener('click', function() {
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar.style.left === '0px') {
+                sidebar.style.left = '-250px'; // Esconde o menu
+            } else {
+                sidebar.style.left = '0px'; // Mostra o menu
+            }
+        });
+    </script>
+</body>
+</html>
