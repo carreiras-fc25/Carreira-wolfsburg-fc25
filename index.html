@@ -465,6 +465,26 @@
     </div>
 
    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    function showSection(sectionId) {
+        // Esconde todas as seções
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+
+        // Mostra a seção selecionada
+        const activeSection = document.getElementById(sectionId);
+        if (activeSection) {
+            activeSection.classList.add('active');
+        } else {
+            console.error(`Seção com ID "${sectionId}" não encontrada.`);
+        }
+    }
+
+    // Inicializa a página mostrando a seção "home"
+    showSection('home');
+
     function showSection(sectionId) {
         // Esconde todas as seções
         const sections = document.querySelectorAll('.section');
