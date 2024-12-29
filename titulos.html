@@ -71,13 +71,39 @@
     <script>
         document.getElementById('toggleSidebar').addEventListener('click', function() {
             const sidebar = document.getElementById('sidebar');
-            if ```html
-            (sidebar.style.left === '0px') {
+            if (sidebar.style.left === '0px') {
                 sidebar.style.left = '-250px'; // Esconde o menu
             } else {
                 sidebar.style.left = '0px'; // Mostra o menu
             }
         });
+
+        function sortTitlesByCount() {
+            const rows = Array.from(document.querySelectorAll('#titlesTable tbody tr'));
+            const titles = [];
+
+            rows.forEach(row => {
+                const titleCount = parseInt(row.cells[1].textContent); // Total de Títulos
+                titles.push({
+                    row: row,
+                    titleCount: titleCount
+                });
+            });
+
+            // Ordena os títulos com base na quantidade de títulos
+            titles.sort((a, b) => b.titleCount - a.titleCount);
+
+            // Atualiza a tabela com a nova ordem
+            const tbody = document.querySelector('#titlesTable tbody');
+            tbody.innerHTML = ''; // Limpa o conteúdo atual
+
+            titles.forEach(title => {
+                tbody.appendChild(title.row); // Adiciona a nova ordem das linhas
+            });
+        }
+
+        // Chama a função para ordenar os títulos ao carregar a página
+        window.onload = sortTitlesByCount;
     </script>
 </body>
 </html>
