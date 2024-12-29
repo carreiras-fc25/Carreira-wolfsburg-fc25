@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOLFSBURG</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+            position: relative; /* Necessário para o posicionamento absoluto do botão */
+        }
+
+        .whatsapp-button {
+            position: absolute;
+            top: 20px; /* Distância do topo */
+            right: 20px; /* Distância da direita */
+            background-color: #25D366; /* Cor de fundo */
+            border-radius: 5px;
+            padding: 10px; /* Espaçamento interno */
+            transition: background-color 0.3s;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #128C7E; /* Cor mais escura ao passar o mouse */
+        }
+
+        .whatsapp-icon {
+            width: 30px; /* Ajuste o tamanho do ícone */
+            height: 30px; /* Ajuste o tamanho do ícone */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        h1 img {
+            width: 30px; /* Tamanho da logo */
+            height: 30px; /* Tamanho da logo */
+            margin-right: 10px; /* Espaço entre a logo e o texto */
+        }
+
+        h1 {
+            text-align: center;
+            color: #007A33; /* Cor do Wolfsburg */
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #007A33;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: #e9ecef;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .team {
+            font-weight: bold;
+            color: #007A33; /* Cor do Wolfsburg */
+            display: flex;
+            align-items: center;
+        }
+
+        .team img {
+            width: 30px; /* Ajuste o tamanho da logo aqui */
+            height: 30px; /* Ajuste o tamanho da logo aqui */
+            margin-right: 10px;
+        }
+
+        .score {
+            font-weight: bold;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #007A33; /* Cor do Wolfsburg */
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .transfer-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e9ecef;
+            border-radius: 5px;
+        }
+
+        .btn-toggle {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007A33;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-toggle:hover {
+            background-color: #005f26;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://chat.whatsapp.com/HgvnG3mMkZMLoVRaH7zg9J" target="_blank" class="whatsapp-button">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+    </a>
+
+    <div class="container">
+        <h1>
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" alt="Logo do Futebol"> WOLFSBURG
+        </h1>
+
+        <nav>
+            <a href="#ultimos-jogos">Últimos Jogos</a>
+            <a href="#tabela-bundesliga">Tabela da Bundesliga</a>
+            <a href="#artilharia">Artilharia do Time</a>
+            <a href="#titulos">Títulos Wolfsburg</a>
+            <a href="#historico-transferencias">Histórico de Transferências</a>
+        </nav>
+
+        <h2 id="ultimos-jogos">Últimos Jogos</h2>
+        <ul id="gameList"></ul>
+
+        <h2 id="tabela-bundesliga">Tabela da Bundesliga</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Posição</th>
+                    <th>Time</th>
+                    <th>Jogos</th>
+                    <th>Pontos</th>
+                    <th>Vitórias</th>
+                    <th>Empates</th>
+                    <th>Derrotas</th>
+                </tr>
+            </thead>
+            <tbody id="bundesligaTable">
+                <!-- Tabela de times -->
+            </tbody>
+        </table>
+
+        <h2 id="artilharia">Artilharia do Time</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Foto do Jogador</th>
+                    <th>Nome</th>
+                    <th>Jogos</th>
+                    <th>Gols</th>
+                    <th>Assistências</th>
+                    <th>Participações</th>
+                </tr>
+            </thead>
+            <tbody id="topScorers">
+                <!-- Tabela de artilharia -->
+            </tbody>
+        </table>
+
+        <h2 id="titulos">Títulos Wolfsburg</h2>
+        <table id="titlesTable">
+            <thead>
+                <tr>
+                    <th>Competição</th>
+                    <th>Total de Títulos</th>
+                    <th>Ano</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Títulos do Wolfsburg -->
+            </tbody>
+        </table>
+
+        <h2 id="historico-transferencias">Histórico de Transferências</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>NOME DO JOGADOR</th>
+                    <th>CLUBE DE ORIGEM</th>
+                    <th>CLUBE DESTINO</th>
+                    <th>VALOR</th>
+                    <th>POSIÇÃO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Histórico de transferências -->
+            </tbody>
+        </table>
+
+        <h2>Atual Verba de Transferências do Clube</h2>
+        <div class="transfer-info">
+            <p>24.381.372 MILHÕES DE EUROS.</p>
+        </div>
+    </div>
+
+    <script>
+        // Funções JavaScript para calcular pontos, atualizar participações, renderizar jogos, etc.
+    </script>
+</body>
+</html>
