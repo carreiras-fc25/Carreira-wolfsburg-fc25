@@ -17,9 +17,12 @@
             top: 20px; /* Distância do topo */
             right: 20px; /* Distância da direita */
             background-color: #25D366; /* Cor de fundo */
-            border-radius: 5px;
-            padding: 10px; /* Espaçamento interno */
+            border-radius: 50%; /* Botão redondo */
+            padding: 15px; /* Espaçamento interno */
             transition: background-color 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
         }
 
         .whatsapp-button:hover {
@@ -53,11 +56,12 @@
             display: none; /* Esconde o menu inicialmente */
             position: absolute;
             top: 70px; /* Distância do topo */
-            left: 20px; /* Distância da esquerda */
+            right: 20px; /* Distância da direita */
             background: #ffffff;
             padding: 10px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease; /* Transição suave */
         }
 
         .menu a {
@@ -120,12 +124,12 @@
             <img src="https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" alt="Logo do Futebol"> WOLFSBURG
         </h1>
 
-        <button onclick="toggleMenu()">Menu</button>
+        <button class="whatsapp-button" onclick="toggleMenu()">☰</button>
         <div class="menu" id="menu">
-            <a href="#" onclick="showSection('home'); hideMenu()">História do Clube</a>
+                        <a href="#" onclick="showSection('home'); hideMenu()">História do Clube</a>
             <a href="#" onclick="showSection('ultimos-jogos'); hideMenu()">Últimos Jogos</a>
             <a href="#" onclick="showSection('tabela-bundesliga'); hideMenu()">Tabela da Bundesliga</a>
-                       <a href="#" onclick="showSection('artilharia'); hideMenu()">Artilharia do Time</a>
+            <a href="#" onclick="showSection('artilharia'); hideMenu()">Artilharia do Time</a>
             <a href="#" onclick="showSection('titulos'); hideMenu()">Títulos</a>
             <a href="#" onclick="showSection('historico-transferencias'); hideMenu()">Histórico de Transferências</a>
         </div>
@@ -249,7 +253,7 @@
                     <tr>
                         <td>Volland</td>
                         <td>Union Berlim</td>
-                                                <td>Wolfsburg</td>
+                        <td>Wolfsburg</td>
                         <td>€6.6MI</td>
                         <td>ATA</td>
                     </tr>
