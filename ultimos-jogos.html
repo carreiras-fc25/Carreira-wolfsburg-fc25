@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOLFSBURG - Últimos Jogos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="historico.html">História do Clube</a></li>
+            <li><a href="ultimos-jogos.html">Últimos Jogos</a></li>
+            <li><a href="tabela.html">Tabela da Bundesliga</a></li>
+            <li><a href="artilharia.html">Artilharia do Time</a></li>
+            <li><a href="titulos.html">Títulos Wolfsburg</a></li>
+            <li><a href="transferencias.html">Histórico de Transferências</a></li>
+            <li><a href="contratos.html">Contratos com Jogadores</a></li>
+            <li><a href="verba.html">Atual Verba de Transferências</a></li>
+        </ul>
+    </div>
+    <a href="https://chat.whatsapp.com/HgvnG3mMkZMLoVRaH7zg9J" target="_blank" class="whatsapp-button">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+    </a>
+    <button class=" btn-toggle" id="toggleSidebar">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
+    <div class="container">
+        <h1>Últimos Jogos</h1>
+        <ul id="gameList"></ul>
+    </div>
+    <script>
+        document.getElementById('toggleSidebar').addEventListener('click', function() {
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar.style.left === '0px') {
+                sidebar.style.left = '-250px'; // Esconde o menu
+            } else {
+                sidebar.style.left = '0px'; // Mostra o menu
+            }
+        });
+
+        // Adicione os jogos aqui com placar
+        const games = [
+            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Stuttgart", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/Qc_eb6-lZEDR8ojQmZxFhQ_64x64.png" }, score: "1 - 0" },
+            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Bayer Leverkusen", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/0zIcXiwD_JGY482DFC28Lw_64x64.png" }, score: "2 - 1" },
+            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Frankfurt", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/VOizBJPDHnvnSaU3XPVGAw_64x64.png" }, score: "6 - 2" },
+            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Holstein Kiel", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/9NJC7z1ReBNUIdqTTywvCw_64x64.png" }, score: "2 - 2" },
+            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Bayer München", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/-_cmntP5q_pHL7g5LfkRiw_64x64.png" }, score: "1 - 2" }
+        ];
+
+        function renderGames() {
+            const gameList = document.getElementById('gameList');
+            gameList.innerHTML = '';
+
+            games.forEach(game => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <span class="team">
+                        <img src="${game.team1.logo}" alt="${game.team1.name} Logo"> ${game.team1.name} 
+                    </span>
+                    <span class="score">${game.score}</span>
+                    <span class="team">
+                        <img src="${game.team2.logo}" alt="${game.team2.name} Logo"> ${game.team2.name} 
+                    </span>
+                `;
+                gameList.appendChild(listItem);
+            });
+        }
+
+        // Renderiza os jogos ao carregar a página
+        renderGames();
+    </script>
+</body>
+</html>
