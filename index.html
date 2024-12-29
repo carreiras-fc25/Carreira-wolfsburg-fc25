@@ -160,10 +160,10 @@
             <p>O VfL Wolfsburg é um clube de futebol profissional da Alemanha, fundado em 1945. O clube é conhecido por sua forte presença na Bundesliga e por ter conquistado a Bundesliga em 2009.</p>
         </div>
 
-        <div id="ultimos-jogos" class="section">
-            <h2>Últimos Jogos</h2>
-            <ul id="gameList"></ul>
-        </div>
+       <div id="ultimos-jogos" class="section">
+    <h2>Últimos Jogos</h2>
+    <ul id="gameList" style="list-style-type: none; padding: 0;"></ul>
+</div>
 
         <div id="tabela-bundesliga" class="section">
             <h2>Tabela da Bundesliga</h2>
@@ -387,32 +387,36 @@
 updateParticipations();
 
         // Adicione os jogos aqui com placar
-        const games = [
-            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Stuttgart", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/Qc_eb6-lZEDR8ojQmZxFhQ_64x64.png" }, score: "1 - 0" },
-            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Bayer Leverkusen", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/0zIcXiwD_JGY482DFC28Lw_64x64.png" }, score: "2 - 1" },
-            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Frankfurt", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/VOizBJPDHnvnSaU3XPVGAw_64x64.png" }, score: "6 - 2" },
-            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Holstein Kiel", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/9NJC7z1ReBNUIdqTTywvCw_64x64.png" }, score: "2 - 2" },
-            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Bayer München", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/-_cmntP5q_pHL7g5LfkRiw_64x64.png" }, score: "1 - 2" }
-        ];
+    const games = [
+        { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Stuttgart", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/Qc_eb6-lZEDR8ojQmZxFhQ_64x64.png" }, score: "1 - 0" },
+        { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Bayer Leverkusen", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/0zIcXiwD_JGY482DFC28Lw_64x64.png" }, score: "2 - 1" },
+        { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Frankfurt", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/VOizBJPDHnvnSaU3XPVGAw_64x64.png" }, score: "6 - 2" },
+        { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Holstein Kiel", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/9NJC7z1ReBNUIdqTTywvCw_64x64.png" }, score: "2 - 2" },
+        { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Bayer München", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/-_cmntP5q_pHL7g5LfkRiw_64x64.png" }, score: "1 - 2" }
+    ];
 
-        function renderGames() {
-            const gameList = document.getElementById('gameList');
-            gameList.innerHTML = '';
+    function displayGames() {
+        const gameListElement = document.getElementById('gameList');
+        gameListElement.innerHTML = ''; // Limpa a lista antes de adicionar novos jogos
 
-            games.forEach(game => {
-                const listItem = document.createElement('li');
-                listItem.innerHTML = `
-                    <span class="team">
-                        <img src="${game.team1.logo}" alt="${game.team1.name} Logo"> ${game.team1.name} 
-                    </span>
-                    <span class="score">${game.score}</span>
-                    <span class="team">
-                        <img src="${game.team2.logo}" alt="${game.team2.name} Logo"> ${game.team2.name} 
-                    </span>
-                `;
-                gameList.appendChild(listItem);
-            });
-        }
+        games.forEach(game => {
+            const listItem = document.createElement('li');
+            listItem.style.padding = '10px';
+            listItem.style.borderBottom = '1px solid #ddd';
+
+            listItem.innerHTML = `
+                <img src="${game.team1.logo}" alt="${game.team1.name}" style="width: 30px; vertical-align: middle;">
+                <strong>${game.team1.name}</strong> ${game.score} 
+                <strong>${game.team2.name}</strong>
+                <img src="${game.team2.logo}" alt="${game.team2.name}" style="width: 30px; vertical-align: middle;">
+            `;
+
+            gameListElement.appendChild(listItem);
+        });
+    }
+
+    // Chama a função para exibir os jogos ao carregar a página
+    displayGames();
 
         function sortTableByTitles() {
     const table = document.getElementById("titlesTable");
