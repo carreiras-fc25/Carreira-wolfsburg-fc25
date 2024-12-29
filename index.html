@@ -15,13 +15,14 @@
         }
 
         .whatsapp-button {
-            position: absolute;
+            position: fixed; /* Flutuante */
             top: 20px; /* Distância do topo */
             right: 20px; /* Distância da direita */
             background-color: #25D366; /* Cor de fundo */
             border-radius: 5px;
             padding: 10px; /* Espaçamento interno */
             transition: background-color 0.3s;
+            z-index: 1000; /* Para garantir que o botão fique acima de outros elementos */
         }
 
         .whatsapp-button:hover {
@@ -139,55 +140,61 @@
         }
 
         .btn-toggle {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
+            position: fixed; /* Acoplado ao menu */
+            top: 20px;
+            left: 20px;
             background-color: #007A33;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            padding: 10px;
+            z-index: 1001; /* Para garantir que o botão fique acima do menu */
         }
 
-        .btn-toggle:hover {
-            background-color: #005f26;
+        .btn-toggle .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
         }
+
         .sidebar {
-    position: fixed;
-    top: 0;
-    left: -250px; /* Escondido inicialmente */
-    width: 250px;
-    height: 100%;
-    background-color: #007A33; /* Cor do fundo do menu */
-    color: white;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    transition: left 0.3s ease; /* Transição suave */
-    z-index: 1000; /* Para garantir que o menu fique acima de outros elementos */
-}
+            position: fixed;
+            top: 0;
+            left: -250px; /* Escondido inicialmente */
+            width: 250px;
+            height: 100%;
+            background-color: #007A33; /* Cor do fundo do menu */
+            color: black; /* Cor da fonte do menu */
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            transition: left 0.3s ease; /* Transição suave */
+            z-index: 1000; /* Para garantir que o menu fique acima de outros elementos */
+        }
 
-.sidebar h2 {
-    margin: 0 0 20px;
-}
+        .sidebar h2 {
+            margin: 0 0 20px;
+        }
 
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-.sidebar li {
-    margin: 15px 0;
-}
+        .sidebar li {
+            margin: 15px 0;
+        }
 
-.sidebar a {
-    color: white;
-    text-decoration: none;
-}
+        .sidebar a {
+            color: black; /* Cor da fonte do menu */
+            text-decoration: none;
+        }
 
-.sidebar a:hover {
-    text-decoration: underline;
-}
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -204,211 +211,215 @@
         <li><a href="#verba">Atual Verba de Transferências</a></li>
     </ul>
 </div>
-    <a href="https://chat.whatsapp.com/HgvnG3mMkZMLoVRaH7zg9J" target="_blank" class="whatsapp-button">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
-    </a>
-  <button class="btn-toggle" id="toggleSidebar">Menu</button>
-    <div class="container">
-        <h1>
-            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" alt="Logo do Futebol"> WOLFSBURG
-        </h1>
-<h2 id="historico">História do Clube</h2>
-            <p>O Wolfsburg, oficialmente conhecido como VfL Wolfsburg, é um clube de futebol alemão fundado em 1945. Sua origem está ligada à construção da cidade de Wolfsburg, que foi criada para abrigar trabalhadores da fábrica da Volkswagen, uma das maiores montadoras do mundo.</p>
-            <h3>Marcos Importantes:</h3>
-            <ul>
-                <li><strong>Fundação:   </strong>     O clube foi fundado em 12 de setembro de 1945, por funcionários da Volkswagen. Nos primeiros anos, o Wolfsburg focou em competições locais.</li>
-                <li><strong>Subida nas divisões:   </strong>     O Wolfsburg começou a ganhar destaque nos anos 1970 e 1980, subindo pelas divisões do futebol alemão. Em 1997, o clube foi promovido à Bundesliga, a primeira divisão do futebol da Alemanha.</li>
-                <li><strong>Sucesso recente:  </strong>    O auge do clube ocorreu na temporada 2008-2009, quando o Wolfsburg conquistou seu primeiro título da Bundesliga, sob a direção do treinador Felix Magath, com uma equipe liderada pelo atacante Edin Džeko.</li>
-                <li><strong>Copa da Alemanha:  </strong>    Além do campeonato nacional, o clube também teve sucesso na Copa da Alemanha, onde conquistou o título em 2015.</li>
-                <li><strong>Participações internacionais:  </strong>    O Wolfsburg tem historicamente competido em várias edições da Europa League e da Liga dos Campeões da UEFA, consolidando sua presença no futebol europeu.</li>
-            </ul>
-            <p>O clube é conhecido pelas suas ligações com a Volkswagen, que é o patrocinador principal e tem grande influência em sua gestão e desenvolvimento. A equipe joga seus jogos em casa no Estádio Volkswagen Arena, que tem capacidade para cerca de 30.000 espectadores.</p>
-            <p>Ao longo dos anos, o Wolfsburg se estabeleceu como uma equipe respeitável no futebol alemão e tem buscado continuar a competir em alto nível tanto nacional quanto internacionalmente.</p>
-        </div>
+<a href="https://chat.whatsapp.com/HgvnG3mMkZMLoVRaH7zg9J" target="_blank" class="whatsapp-button">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+</a>
+<button class="btn-toggle" id="toggleSidebar">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</button>
+<div class="container">
+    <h1>
+        <img src="https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" alt="Logo do Futebol"> WOLFSBURG
+    </h1>
+    <h2 id="historico">História do Clube</h2>
+    <p>O Wolfsburg, oficialmente conhecido como VfL Wolfsburg, é um clube de futebol alemão fundado em 1945. Sua origem está ligada à construção da cidade de Wolfsburg, que foi criada para abrigar trabalhadores da fábrica da Volkswagen, uma das maiores montadoras do mundo.</p>
+    <h3>Marcos Importantes:</h3>
+    <ul>
+        <li><strong>Fundação:</strong> O clube foi fundado em 12 de setembro de 1945, por funcionários da Volkswagen. Nos primeiros anos, o Wolfsburg focou em competições locais.</li>
+        <li><strong>Subida nas divisões:</strong> O Wolfsburg começou a ganhar destaque nos anos 1970 e 1980, subindo pelas divisões do futebol alemão. Em 1997, o clube foi promovido à Bundesliga, a primeira divisão do futebol da Alemanha.</li>
+        <li><strong>Sucesso recente:</strong> O auge do clube ocorreu na temporada 2008-2009, quando o Wolfsburg conquistou seu primeiro título da Bundesliga, sob a direção do treinador Felix Magath, com uma equipe liderada pelo atacante Edin Džeko.</li>
+        <li><strong>Copa da Alemanha:</strong> Além do campeonato nacional, o clube também teve sucesso na Copa da Alemanha, onde conquistou o título em 2015.</li>
+        <li><strong>Participações internacionais:</strong> O Wolfsburg tem histor icamente competido em várias edições da Europa League e da Liga dos Campeões da UEFA, consolidando sua presença no futebol europeu.</li>
+    </ul>
+    <p>O clube é conhecido pelas suas ligações com a Volkswagen, que é o patrocinador principal e tem grande influência em sua gestão e desenvolvimento. A equipe joga seus jogos em casa no Estádio Volkswagen Arena, que tem capacidade para cerca de 30.000 espectadores.</p>
+    <p>Ao longo dos anos, o Wolfsburg se estabeleceu como uma equipe respeitável no futebol alemão e tem buscado continuar a competir em alto nível tanto nacional quanto internacionalmente.</p>
+</div>
 
-       <h2 id="ultimos-jogos">Últimos Jogos</h2>
-        <ul id="gameList"></ul>
+<h2 id="ultimos-jogos">Últimos Jogos</h2>
+<ul id="gameList"></ul>
 
-        <h2 id="tabela">Tabela da Bundesliga</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Posição</th>
-                    <th>Time</th>
-                    <th>Jogos</th>
-                    <th>Pontos</th>
-                    <th>Vitórias</th>
-                                        <th>Empates</th>
-                    <th>Derrotas</th>
-                </tr>
-            </thead>
-            <tbody id="bundesligaTable">
-                <tr>
-                    <td class="champions">1</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/R7-Lqc_SDxd97uWgoeUQ-g_64x64.png"> RB Leipzig</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>5</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td class="champions">2</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/FZnTSH2rbHFos4BnlWAItw_64x64.png"> Borussia Dortmund</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>4</td>
-                    <td>1</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td class="europa">3</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png"> Vfl Wolfsburg</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>3</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td class="europa">4</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/Qc_eb6-lZEDR8ojQmZxFhQ_64x64.png"> Stuttgart</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>3</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td class="conference">5</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/-_cmntP5q_pHL7g5LfkRiw_64x64.png"> Bayer Munchen</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>3</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/tMFLGl5GGkQXMihhpJVXuw_64x64.png"> Pauli</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/-_DNuqGrrFQ5FUvKjb7zAw_64x64.png"> Mainz 05</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/0zIcXiwD_JGY482DFC28Lw_64x64.png"> Leverkusen</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/VOizBJPDHnvnSaU3XPVGAw_64x64.png"> Frankfurt</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>3</td>
-                    <td>0</td>
-                                       <td>2</td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/zlO6wgTW2QB30eOypHGxDg_64x64.png"> Hoffenheim</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>2</td>
-                    <td>1</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>11</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/gjz1Ml0qpVQuY3leN4z8mQ_64x64.png"> Augsburg</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>12</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/s0YO0sK9qrioMnzJuFGKuw_64x64.png"> Freiburg</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>13</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/zsPvbWQ2kNoiZX3sZXq-Yg_64x64.png"> Union Berlin</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>14</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/9NJC7z1ReBNUIdqTTywvCw_64x64.png"> Holstein Kiel</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>15</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/HFg_gp-vbuL7z1Othoa0ZA_64x64.png"> M'gladbach</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td class="relegation">16</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/BY9Ihv1GcvZnxQWkPtEBug_64x64.png"> Bochum</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td class="relegation">17</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/Nqpb8Rl6ShUtB0ClAKRw-g_64x64.png"> Heidenheim</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td class="relegation">18</td>
-                    <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/v4G9srMr-9IWDhCXiPhAIw_64x64.png"> Werder Bremen</td>
-                    <td>5</td>
-                    <td class="points"></td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>4</td>
-                </tr>
-            </tbody>
-        </table>
+<h2 id="tabela">Tabela da Bundesliga</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Posição</th>
+            <th>Time</th>
+            <th>Jogos</th>
+            <th>Pontos</th>
+            <th>Vitórias</th>
+            <th>Empates</th>
+            <th>Derrotas</th>
+        </tr>
+    </thead>
+    <tbody id="bundesligaTable">
+        <tr>
+            <td class="champions">1</td>
+            <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/R7-Lqc_SDxd97uWgoeUQ-g_64x64.png"> RB Leipzig</td>
+            <td>5</td>
+            <td class="points"></td>
+            <td>5</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td class="champions">2</td>
+            <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/FZnTSH2rbHFos4BnlWAItw_64x64.png"> Borussia Dortmund</td>
+            <td>5</td>
+            <td class="points"></td>
+            <td>4</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td class="europa">3</td>
+            <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png"> Vfl Wolfsburg</td>
+            <td>5</td>
+            <td class="points"></td>
+            <td>3</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td class="europa">4</td>
+            <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/Qc_eb6-lZEDR8ojQmZxFhQ_64x64.png"> Stuttgart</td>
+            <td>5</td>
+            <td class="points"></td>
+            <td>3</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td class="conference">5</td>
+            <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/-_cmntP5q_pHL7g5LfkRiw_64x64.png"> Bayer Munchen</td>
+            <td>5</td>
+            <td class="points"></td>
+            <td>3</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/tMFLGl5GGkQXMihhpJVXuw_64x64.png"> Pauli</td>
+            <td>5</td>
+            <td class="points"></td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/-_DNuqGrrFQ5FUvKjb7zAw_64x64.png"> Mainz 05</td>
+            <td>5</td>
+            <td class="points"></td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/0zIcXiwD_JGY482DFC28Lw_64x64.png"> Leverkusen</td>
+            <td>5</td>
+            <td class="points"></td>
+            <td>2</td>
+            <td>0</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/VOizBJPDHnvnSaU3XPVGAw_64x64.png"> Frankfurt</td>
+            <td>5</td>
+            <td class="points"></td>
+            <td>3</td>
+            <td>0</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/zlO6wgTW2QB30eOypHGxDg_64x64.png"> Hoffenheim</td>
+            <td>5</td>
+            <td class="points"></td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/gjz1Ml0qpVQuY3leN4z8mQ_64x64.png"> Augsburg</td>
+            <td>5</td>
+            <td class="points"></td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/s0YO0sK9qrioMnzJuFGKuw_64x64.png"> Freiburg</td>
+            <td>5</td>
+            <td class="points"></td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/zsPvbWQ2kNoiZX3sZXq-Yg_64x64.png"> Union Berlin</td>
+            <td>5</td>
+            <td class="points"></td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/9NJC7z1ReBNUIdqTTywvCw_64x64.png"> Holstein Kiel</td>
+            <td>5</td>
+            <td class="points"></td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/HFg_gp-vbuL7z1Othoa0ZA_64x64.png"> M'gladbach</td>
+            <td>5</td>
+            <td class="points"></td>
+            <td>1</td>
+            <td>0</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td class="relegation">16</td>
+            <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/BY9Ihv1GcvZnxQWkPtEBug_64x64.png"> Bochum</td>
+            <td>5</td>
+            <td class="points"></td>
+            <td>1</td>
+            <td>1</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td class="relegation">17</td>
+            <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/Nqpb8Rl6ShUtB0Cl AKRw-g_64x64.png"> Heidenheim</td>
+            <td>5</td>
+            <td class="points"></td>
+            <td>0</td>
+            <td>1</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td class="relegation">18</td>
+            <td><img src="https://ssl.gstatic.com/onebox/media/sports/logos/v4G9srMr-9IWDhCXiPhAIw_64x64.png"> Werder Bremen</td>
+            <td>5</td>
+            <td class="points"></td>
+            <td>0</td>
+            <td>1</td>
+            <td>4</td>
+        </tr>
+    </tbody>
+</table>
 
-                <h2 id="artilharia">Artilharia do Time</h2>
+<h2 id="artilharia">Artilharia do Time</h2>
 <table>
     <thead>
         <tr>
@@ -463,6 +474,7 @@
         </tr>
     </tbody>
 </table>
+
 <h2 id="titulos">Títulos Wolfsburg</h2>
 <table id="titlesTable">
     <thead>
@@ -481,7 +493,7 @@
         <tr>
             <td>Pokal</td>
             <td>1</td>
-            <td>2014/2015</td>
+ <td>2014/2015</td>
         </tr>
         <tr>
             <td>Champions League</td>
@@ -496,217 +508,219 @@
         <tr>
             <td>Super Cup</td>
             <td>1</td>
-            <td>2015</td></td>
+            <td>2015</td>
         </tr>
     </tbody>
 </table>
-       <h2 id="transferencias">Histórico de Transferências</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>NOME DO JOGADOR</th>
-                    <th>CLUBE DE ORIGEM</th>
-                    <th>CLUBE DESTINO</th>
-                    <th>VALOR</th>
-                    <th>POSIÇÃO</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Vnagnoman</td>
-                    <td>Stuttgart</td>
-                    <td>Wolfsburg</td>
-                    <td>€8MI</td>
-                    <td>LD</td>
-                </tr>
-                <tr>
-                    <td>Kevin P.</td>
-                    <td>Wolfsnurg</td>
-                    <td>Fiorentina</td>
-                    <td>€10.7MI</td>
-                    <td>ME</td>
-                </tr>
-                <tr>
-                    <td>Volland</td>
-                    <td>Union Berlim</td>
-                    <td>Wolfsburg</td>
-                    <td>€6.6MI</td>
-                    <td>ATA</td>
-                </tr>
-                <tr>
-                    <td>Fabian</td>
-                    <td>Herta</td>
-                    <td>Wolfsburg</td>
-                    <td>€2M</td>
-                    <td>MC</td>
-                </tr>
-            </tbody>
-        </table>
-               <h2 id="contratos">Contratos com Jogadores</h2>
-        <table>
-            <thead>
-                <tbody>
-                <tr>
-                    <th>FOTO DO JOGADOR</th>
-                    <th>NOME DO JOGADOR</th>
-                    <th>TEMPO DE CONTRATO</th>
-                    <th>SALARIO</th>
-                    <th>VALOR DO JOGADOR</th>
-                    <th>MULTA RECISORIA</th>
-                </tr>
-                <tr>
+
+<h2 id="transferencias">Histórico de Transferências</h2>
+<table>
+    <thead>
+        <tr>
+            <th>NOME DO JOGADOR</th>
+            <th>CLUBE DE ORIGEM</th>
+            <th>CLUBE DESTINO</th>
+            <th>VALOR</th>
+            <th>POSIÇÃO</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Vnagnoman</td>
+            <td>Stuttgart</td>
+            <td>Wolfsburg</td>
+            <td>€8MI</td>
+            <td>LD</td>
+        </tr>
+        <tr>
+            <td>Kevin P.</td>
+            <td>Wolfsnurg</td>
+            <td>Fiorentina</td>
+            <td>€10.7MI</td>
+            <td>ME</td>
+        </tr>
+        <tr>
+            <td>Volland</td>
+            <td>Union Berlim</td>
+            <td>Wolfsburg</td>
+            <td>€6.6MI</td>
+            <td>ATA</td>
+        </tr>
+        <tr>
+            <td>Fabian</td>
+            <td>Herta</td>
+            <td>Wolfsburg</td>
+            <td>€2M</td>
+            <td>MC</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="contratos">Contratos com Jogadores</h2>
+<table>
+    <thead>
+        <tr>
+            <th>FOTO DO JOGADOR</th>
+            <th>NOME DO JOGADOR</th>
+            <th>TEMPO DE CONTRATO</th>
+            <th>SALARIO</th>
+            <th>VALOR DO JOGADOR</th>
+            <th>MULTA RECISORIA</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
             <td><img src="https://assets.bundesliga.com/player/dfl-obj-0026sk-dfl-clu-00000z-dfl-sea-0001k8.png?fit=320,320" alt="Jogador 5" width="50" height="50"></td>
             <td>Reese</td>
-            <td> - </td>
-            <td> - </td>
-            <td> - </td>
-            <td> - </td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
         </tr>
-            </thead>
-            </tbody>
-        </table>
+    </tbody>
+</table>
 
-      <h2 id="verba">Atual Verba de Transferências</h2>
-        <div class="transfer-info">
-            <p> 24.381.372 MILHÕES DE EUROS.</p>
-        </div>
-    </div>
-    <script>
-        // Função para calcular os pontos
-        function calculatePoints() {
-            const rows = document.querySelectorAll('#bundesligaTable tr');
-            const teams = [];
+<h2 id="verba">Atual Verba de Transferências</h2>
+<div class="transfer-info">
+    <p>24.381.372 MILHÕES DE EUROS.</p>
+</div>
 
-            rows.forEach(row => {
-                const wins = parseInt(row.cells[4].textContent); // Vitórias
-                const draws = parseInt(row.cells[5].textContent); // Empates
-                               const points = (wins * 3) + (draws * 1); // Cálculo dos pontos
-                row.querySelector('.points').textContent = points; // Atualiza a coluna de pontos
+<script>
+    // Função para calcular os pontos
+    function calculatePoints() {
+        const rows = document.querySelectorAll('#bundesligaTable tr');
+        const teams = [];
 
-                // Adiciona os dados da equipe ao array
-                teams.push({
-                    row: row,
-                    points: points
-                });
+        rows.forEach(row => {
+            const wins = parseInt(row.cells[4].textContent); // Vitórias
+            const draws = parseInt(row.cells[5].textContent); // Empates
+            const points = (wins * 3) + (draws * 1); // Cálculo dos pontos
+            row.querySelector('.points').textContent = points; // Atualiza a coluna de pontos
+
+            // Adiciona os dados da equipe ao array
+            teams.push({
+                row: row,
+                points: points
             });
-
-            // Ordena as equipes com base nos pontos
-            teams.sort((a, b) => b.points - a.points);
-
-            // Atualiza a tabela com a nova ordem
-            const tbody = document.getElementById('bundesligaTable');
-            tbody.innerHTML = ''; // Limpa o conteúdo atual
-
-            teams.forEach((team, index) => {
-                const newRow = team.row.cloneNode(true); // Clona a linha original
-                newRow.cells[0].textContent = index + 1; // Atualiza a posição
-                tbody.appendChild(newRow); // Adiciona a nova linha à tabela
-            });
-        }
-
-        function updateParticipations() {   // funçao de atualizar tabela artilharia
-    const rows = document.querySelectorAll('#topScorers tr');
-    const players = [];
-
-    rows.forEach(row => {
-        const goals = parseInt(row.cells[3].textContent); // Gols
-        const assists = parseInt(row.cells[4].textContent); // Assistências
-        const participations = goals + assists; // Cálculo de participações
-        row.querySelector('.participations').textContent = participations; // Atualiza a coluna de participações
-
-        // Adiciona os dados do jogador ao array
-        players.push({
-            row: row,
-            participations: participations
         });
-    });
 
-    // Ordena os jogadores com base nas participações
-    players.sort((a, b) => b.participations - a.participations);
+        // Ordena as equipes com base nos pontos
+        teams.sort((a, b) => b.points - a.points);
 
-    // Atualiza a tabela com a nova ordem
-    const tbody = document.getElementById('topScorers');
-    tbody.innerHTML = ''; // Limpa o conteúdo atual
+        // Atualiza a tabela com a nova ordem
+        const tbody = document.getElementById('bundesligaTable');
+        tbody.innerHTML = ''; // Limpa o conteúdo atual
 
-    players.forEach((player, index) => {
-        const newRow = player.row.cloneNode(true); // Clona a linha original
-        tbody.appendChild(newRow); // Adiciona a nova linha à tabela
-    });
-}
-
-// Chama a função para atualizar as participações ao carregar a página
-updateParticipations();
-
-        // Adicione os jogos aqui com placar
-        const games = [
-            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Stuttgart", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/Qc_eb6-lZEDR8ojQmZxFhQ_64x64.png" }, score: "1 - 0" },
-            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Bayer Leverkusen", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/0zIcXiwD_JGY482DFC28Lw_64x64.png" }, score: "2 - 1" },
-            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Frankfurt", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/VOizBJPDHnvnSaU3XPVGAw_64x64.png" }, score: "6 - 2" },
-            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Holstein Kiel", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/9NJC7z1ReBNUIdqTTywvCw_64x64.png" }, score: "2 - 2" },
-            { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Bayer München", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/-_cmntP5q_pHL7g5LfkRiw_64x64.png" }, score: "1 - 2" }
-        ];
-
-        function renderGames() {
-            const gameList = document.getElementById('gameList');
-            gameList.innerHTML = '';
-
-            games.forEach(game => {
-                const listItem = document.createElement('li');
-                listItem.innerHTML = `
-                    <span class="team">
-                        <img src="${game.team1.logo}" alt="${game.team1.name} Logo"> ${game.team1.name} 
-                    </span>
-                    <span class="score">${game.score}</span>
-                    <span class="team">
-                        <img src="${game.team2.logo}" alt="${game.team2.name} Logo"> ${game.team2.name} 
-                    </span>
-                `;
-                gameList.appendChild(listItem);
-            });
-        }
-
-        function sortTableByTitles() {
-    const table = document.getElementById("titlesTable");
-    const rows = Array.from(table.rows).slice(1); // Exclude header row
-
-    rows.sort((a, b) => {
-        const titleA = parseInt(a.cells[1].innerText); // Get titles from the second column
-        const titleB = parseInt(b.cells[1].innerText);
-        return titleB - titleA; // Sort in descending order
-    });
-
-    // Append sorted rows back to the table body
-    const tbody = table.querySelector("tbody");
-    tbody.innerHTML = ""; // Clear existing rows
-    rows.forEach(row => tbody.appendChild(row)); // Append sorted rows
-}
-
-// Call the function to sort the table
-sortTableByTitles();
-
-        // Função para alternar entre modo claro e escuro
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-            document.querySelector('.container').classList.toggle('dark-mode');
-            const tableHeaders = document.querySelectorAll('th');
-            tableHeaders.forEach(th => th.classList.toggle('dark-mode'));
-            const listItems = document.querySelectorAll('li');
-            listItems.forEach(li => li.classList.toggle('dark-mode'));
-        }
-
-        // Renderiza os jogos ao carregar a página
-        renderGames();
-        // Calcula os pontos e ordena a tabela ao carregar a página
-        calculatePoints();
-
-        document.getElementById('toggleSidebar').addEventListener('click', function() {
-    const sidebar = document.getElementById('sidebar');
-    if (sidebar.style.left === '0px') {
-        sidebar.style.left = '-250px'; // Esconde o menu
-    } else {
-        sidebar.style.left = '0px'; // Mostra o menu
+        teams.forEach((team, index) => {
+            const newRow = team.row.cloneNode(true); // Clona a linha original
+            newRow.cells[0].textContent = index + 1; // Atualiza a posição
+            tbody.appendChild(newRow); // Ad iciona a nova linha à tabela
+        });
     }
-});
-    </script>
+
+    function updateParticipations() {   // função de atualizar tabela artilharia
+        const rows = document.querySelectorAll('#topScorers tr');
+        const players = [];
+
+        rows.forEach(row => {
+            const goals = parseInt(row.cells[3].textContent); // Gols
+            const assists = parseInt(row.cells[4].textContent); // Assistências
+            const participations = goals + assists; // Cálculo de participações
+            row.querySelector('.participations').textContent = participations; // Atualiza a coluna de participações
+
+            // Adiciona os dados do jogador ao array
+            players.push({
+                row: row,
+                participations: participations
+            });
+        });
+
+        // Ordena os jogadores com base nas participações
+        players.sort((a, b) => b.participations - a.participations);
+
+        // Atualiza a tabela com a nova ordem
+        const tbody = document.getElementById('topScorers');
+        tbody.innerHTML = ''; // Limpa o conteúdo atual
+
+        players.forEach(player => {
+            const newRow = player.row.cloneNode(true); // Clona a linha original
+            tbody.appendChild(newRow); // Adiciona a nova linha à tabela
+        });
+    }
+
+    // Chama a função para atualizar as participações ao carregar a página
+    updateParticipations();
+
+    // Adicione os jogos aqui com placar
+    const games = [
+        { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Stuttgart", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/Qc_eb6-lZEDR8ojQmZxFhQ_64x64.png" }, score: "1 - 0" },
+        { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Bayer Leverkusen", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/0zIcXiwD_JGY482DFC28Lw_64x64.png" }, score: "2 - 1" },
+        { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Frankfurt", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/VOizBJPDHnvnSaU3XPVGAw_64x64.png" }, score: "6 - 2" },
+        { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Holstein Kiel", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/9NJC7z1ReBNUIdqTTywvCw_64x64.png" }, score: "2 - 2" },
+        { team1: { name: "Wolfsburg", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" }, team2: { name: "Bayer München", logo: "https://ssl.gstatic.com/onebox/media/sports/logos/-_cmntP5q_pHL7g5LfkRiw_64x64.png" }, score: "1 - 2" }
+    ];
+
+    function renderGames() {
+        const gameList = document.getElementById('gameList');
+        gameList.innerHTML = '';
+
+        games.forEach(game => {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
+                <span class="team">
+                    <img src="${game.team1.logo}" alt="${game.team1.name} Logo"> ${game.team1.name} 
+                </span>
+                <span class="score">${game.score}</span>
+                <span class="team">
+                    <img src="${game.team2.logo}" alt="${game.team2.name} Logo"> ${game.team2.name} 
+                </span>
+            `;
+            gameList.appendChild(listItem);
+        });
+    }
+
+    function sortTableByTitles() {
+        const table = document.getElementById("titlesTable");
+        const rows = Array.from(table.rows).slice(1); // Exclude header row
+
+        rows.sort((a, b) => {
+            const titleA = parseInt(a.cells[1].innerText); // Get titles from the second column
+            const titleB = parseInt(b.cells[1].innerText);
+            return titleB - titleA; // Sort in descending order
+        });
+
+        // Append sorted rows back to the table body
+        const tbody = table.querySelector("tbody");
+        tbody.innerHTML = ""; // Clear existing rows
+        rows.forEach(row => tbody.appendChild(row)); // Append sorted rows
+    }
+
+    // Call the function to sort the table
+    sortTableByTitles();
+
+    // Função para alternar entre modo claro e escuro
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        document.querySelector('.container').classList.toggle('dark-mode');
+        const tableHeaders = document.querySelectorAll('th');
+        tableHeaders.forEach(th => th.classList.toggle('dark-mode'));
+        const listItems = document.querySelectorAll('li');
+        listItems.forEach(li => li.classList.toggle('dark-mode'));
+    }
+
+    // Renderiza os jogos ao carregar a página
+    renderGames();
+    // Calcula os pontos e ordena a tabela ao carregar a página
+    calculatePoints();
+
+    document.getElementById('toggleSidebar').addEventListener('click', function() {
+        const sidebar = document.getElementById('sidebar');
+        if (sidebar.style.left === '0px') {
+            sidebar.style.left = '-250px'; // Esconde o menu
+        } else {
+            sidebar.style.left = '0px'; // Mostra o menu
+        }
+    });
+</script>
 </body>
 </html>
