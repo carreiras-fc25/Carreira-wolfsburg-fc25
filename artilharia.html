@@ -15,7 +15,7 @@
             <li><a href="ultimos-jogos.html">Últimos Jogos</a></li>
             <li><a href="tabela.html">Tabela da Bundesliga</a></li>
             <li><a href="artilharia.html">Artilharia do Time</a></li>
-            <li><a href="titulos.html">Títulos Wolfsburg</a></ ```html
+            <li><a href="titulos.html">Títulos Wolfsburg</a></li>
             <li><a href="transferencias.html">Histórico de Transferências</a></li>
             <li><a href="contratos.html">Contratos com Jogadores</a></li>
             <li><a href="verba.html">Atual Verba de Transferências</a></li>
@@ -39,7 +39,7 @@
                     <th>Jogos</th>
                     <th>Gols</th>
                     <th>Assistências</th>
-                    <th>Participações</th>
+                    <th>Participações</th> <!-- Nova coluna -->
                 </tr>
             </thead>
             <tbody id="topScorers">
@@ -49,7 +49,7 @@
                     <td>8</td>
                     <td>11</td>
                     <td>0</td>
-                    <td class="participations"></td>
+                    <td class="participations"></td> <!-- Célula para participações -->
                 </tr>
                 <tr>
                     <td><img src="https://assets.bundesliga.com/player/dfl-obj-0000y4-dfl-clu-000003-dfl-sea-0001k8.png?fit=320,320" alt="Jogador 2" width="50" height="50"></td>
@@ -68,14 +68,14 @@
                     <td class="participations"></td>
                 </tr>
                 <tr>
-                    <td><img src="https://assets.bundesliga.com/player/dfl-obj-j01k33-dfl-clu-000003-dfl-sea-0001k8.png?fit=320,320" alt="Jogador 4" width="50" height="50"></td>
+                    <td><img src="https://assets.bundesliga.com/player/dfl-obj-j01k33-dfl-clu-000003-dfl-sea-0001k8.png?fit=320,320" alt="Jog ador 4" width="50" height="50"></td>
                     <td>Wimmer</td>
                     <td>8</td>
+                    <td>2</td>
                     <td>1</td>
-                    <td>5</td>
                     <td class="participations"></td>
                 </tr>
-                <tr>
+               <tr>
                     <td><img src="https://assets.bundesliga.com/player/dfl-obj-0026sk-dfl-clu-00000z-dfl-sea-0001k8.png?fit=320,320" alt="Jogador 5" width="50" height="50"></td>
                     <td>Reese</td>
                     <td>8</td>
@@ -96,38 +96,19 @@
             }
         });
 
-        function updateParticipations() {
-            const rows = document.querySelectorAll('#topScorers tr ```html
-            const players = [];
+        function calculateParticipations() {
+            const rows = document.querySelectorAll('#topScorers tr');
 
             rows.forEach(row => {
                 const goals = parseInt(row.cells[3].textContent); // Gols
                 const assists = parseInt(row.cells[4].textContent); // Assistências
-                const participations = goals + assists; // Cálculo de participações
+                const participations = goals + assists; // Cálculo das participações
                 row.querySelector('.participations').textContent = participations; // Atualiza a coluna de participações
-
-                // Adiciona os dados do jogador ao array
-                players.push({
-                    row: row,
-                    participations: participations
-                });
-            });
-
-            // Ordena os jogadores com base nas participações
-            players.sort((a, b) => b.participations - a.participations);
-
-            // Atualiza a tabela com a nova ordem
-            const tbody = document.getElementById('topScorers');
-            tbody.innerHTML = ''; // Limpa o conteúdo atual
-
-            players.forEach(player => {
-                const newRow = player.row.cloneNode(true); // Clona a linha original
-                tbody.appendChild(newRow); // Adiciona a nova linha à tabela
             });
         }
 
-        // Chama a função para atualizar as participações ao carregar a página
-        updateParticipations();
+        // Chame a função para calcular as participações ao carregar a página
+        window.onload = calculateParticipations;
     </script>
 </body>
 </html>
