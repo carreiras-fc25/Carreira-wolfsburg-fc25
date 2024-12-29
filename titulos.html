@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOLFSBURG - Títulos Wolfsburg</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="historico.html">História do Clube</a></li>
+            <li><a href="ultimos-jogos.html">Últimos Jogos</a></li>
+            <li><a href="tabela.html">Tabela da Bundesliga</a></li>
+            <li><a href="artilharia.html">Artilharia do Time</a></li>
+            <li><a href="titulos.html">Títulos Wolfsburg</a></li>
+            <li><a href="transferencias.html">Histórico de Transferências</a></li>
+            <li><a href="contratos.html">Contratos com Jogadores</a></li>
+            <li><a href="verba.html">Atual Verba de Transferências</a></li>
+        </ul>
+    </div>
+    <a href="https://chat.whatsapp.com/HgvnG3mMkZMLoVRaH7zg9J" target="_blank" class="whatsapp-button">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+    </a>
+    <button class="btn-toggle" id="toggleSidebar">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
+    <div class="container">
+        <h1>Títulos Wolfsburg</h1>
+        <table id="titlesTable">
+            <thead>
+                <tr>
+                    <th>Competição</th>
+                    <th>Total de Títulos</th>
+                    <th>Ano</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bundesliga</td>
+                    <td>1</td>
+                    <td>2008/2009</td>
+                </tr>
+                <tr>
+                    <td>Pokal</td>
+                    <td>1</td>
+                    <td>2014/2015</td>
+                </tr>
+                <tr>
+                    <td>Champions League</td>
+                    <td>0</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Europa League</td>
+                    <td>0</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Super Cup</td>
+                    <td>1</td>
+                    <td>2015</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        document.getElementById('toggleSidebar').addEventListener('click', function() {
+            const sidebar = document.getElementById('sidebar');
+            if ```html
+            (sidebar.style.left === '0px') {
+                sidebar.style.left = '-250px'; // Esconde o menu
+            } else {
+                sidebar.style.left = '0px'; // Mostra o menu
+            }
+        });
+    </script>
+</body>
+</html>
