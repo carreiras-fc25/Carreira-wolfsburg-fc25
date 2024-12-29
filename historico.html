@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOLFSBURG - História do Clube</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="historico.html">História do Clube</a></li>
+            <li><a href="ultimos-jogos.html">Últimos Jogos</a></li>
+            <li><a href="tabela.html">Tabela da Bundesliga</a></li>
+            <li><a href="artilharia .html">Artilharia do Time</a></li>
+            <li><a href="titulos.html">Títulos Wolfsburg</a></li>
+            <li><a href="transferencias.html">Histórico de Transferências</a></li>
+            <li><a href="contratos.html">Contratos com Jogadores</a></li>
+            <li><a href="verba.html">Atual Verba de Transferências</a></li>
+        </ul>
+    </div>
+    <a href="https://chat.whatsapp.com/HgvnG3mMkZMLoVRaH7zg9J" target="_blank" class="whatsapp-button">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+    </a>
+    <button class="btn-toggle" id="toggleSidebar">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
+    <div class="container">
+        <h1>História do Clube</h1>
+        <p>O Wolfsburg, oficialmente conhecido como VfL Wolfsburg, é um clube de futebol alemão fundado em 1945. Sua origem está ligada à construção da cidade de Wolfsburg, que foi criada para abrigar trabalhadores da fábrica da Volkswagen, uma das maiores montadoras do mundo.</p>
+        <h3>Marcos Importantes:</h3>
+        <ul>
+            <li><strong>Fundação:</strong> O clube foi fundado em 12 de setembro de 1945, por funcionários da Volkswagen.</li>
+            <li><strong>Subida nas divisões:</strong> O Wolfsburg começou a ganhar destaque nos anos 1970 e 1980.</li>
+            <li><strong>Sucesso recente:</strong> O auge do clube ocorreu na temporada 2008-2009, quando conquistou seu primeiro título da Bundesliga.</li>
+            <li><strong>Copa da Alemanha:</strong> O clube também teve sucesso na Copa da Alemanha, conquistando o título em 2015.</li>
+            <li><strong>Participações internacionais:</strong> O Wolfsburg tem competido em várias edições da Europa League e da Liga dos Campeões da UEFA.</li>
+        </ul>
+    </div>
+    <script>
+        document.getElementById('toggleSidebar').addEventListener('click', function() {
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar.style.left === '0px') {
+                sidebar.style.left = '-250px'; // Esconde o menu
+            } else {
+                sidebar.style.left = '0px'; // Mostra o menu
+            }
+        });
+    </script>
+</body>
+</html>
