@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetivos - Wolfsburg</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .objectives {
+            text-align: center;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .objectives h2 {
+            color: #007A33; /* Cor do Wolfsburg */
+        }
+
+        .objective {
+            background-color: #e9ecef;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .objective h3 {
+            color: #007A33; /* Cor do Wolfsburg */
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px; /* Escondido inicialmente */
+            width: 250px;
+            height: 100%;
+            background-color: #007A33; /* Cor do fundo do menu */
+            color: white;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            transition: left 0.3s ease; /* Transição suave */
+            z-index: 1000; /* Para garantir que o menu fique acima de outros elementos */
+        }
+
+        .sidebar h2 {
+            margin: 0 0 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin: 15px 0;
+        }
+
+        .sidebar a {
+            color: black; /* Cor do texto do menu */
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-toggle {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007A33;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-toggle:hover {
+            background-color: #005f26;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="historico.html" id="historico">História do Clube</a></li>
+            <li><a href="ultimos-jogos.html">Últimos Jogos</a></li>
+            <li><a href="tabela.html">Tabela da Bundesliga</a></li>
+            <li><a href="artilharia.html">Artilharia do Time</a></li>
+            <li><a href="titulos.html">Títulos Wolfsburg</a></li>
+            <li><a href="transferencias.html">Histórico de Transferências</a></li>
+            <li><a href="contratos.html">Contratos com Jogadores</a></li>
+            <li><a href="verba.html">Atual Verba de Transferências</a></li>
+            <li><a href="objetivos.html">Objetivos</a></li> <!-- Link para a nova seção -->
+        </ul>
+    </div>
+    <button class="btn-toggle" id="toggleSidebar">Menu</button>
+    <div class="container">
+        <h1>
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" alt="Logo do VfL Wolfsburg" style="width: 30px; height: 30px; margin-right: 10px;">
+            Objetivos do Wolfsburg
+        </h1>
+        <div class="objectives">
+            <h2>Nossos Objetivos para a Temporada</h2>
+            <div class="objective">
+                <h3>1. Classificação para a Champions League</h3>
+                <p>Alcançar uma das quatro primeiras posições na Bundesliga para garantir a participação na próxima edição da Champions League.</p>
+            </div>
+            <div class="objective">
+                <h3>2. Desenvolvimento de Jovens Talentos</h3>
+                <p>Focar no desenvolvimento de jogadores jovens através de um programa de treinamento intensivo e oportunidades de jogo.</p>
+            </div>
+            <div class="objective">
+                <h3>3. Conquista da DFB-Pokal</h3>
+                <p>Buscar a vitória na DFB-Pokal, proporcionando uma chance de conquistar um título e garantir uma vaga na Europa.</p>
+            </div>
+            <div class="objective">
+                <h3>4. Melhoria do Desempenho em Casa</h3>
+                <p>Fortalecer o desempenho em casa, garantindo vitórias em jogos no Estádio Volkswagen Arena.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
