@@ -158,10 +158,10 @@ li.dark-mode {
     position: fixed;
     top: 0;
     left: -250px; /* Escondido inicialmente */
-    width: 250px;
+    width: 300px; /* Aumente a largura do menu */
     height: 100%;
     background-color: #007A33; /* Cor do fundo do menu */
-    color: black; /* Cor da fonte do menu */
+    color: white;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
     transition: left 0.3s ease; /* Transição suave */
@@ -188,4 +188,10 @@ li.dark-mode {
 
 .sidebar a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 80%; /* Largura do menu em dispositivos móveis */
+    }
 }
