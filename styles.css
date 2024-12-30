@@ -6,7 +6,6 @@ body {
     transition: background-color 0.3s, color 0.3s;
     position: relative; /* Necessário para o posicionamento absoluto do botão */
 }
-
 .whatsapp-button {
     position: fixed; /* Flutuante */
     top: 20px; /* Distância do topo */
@@ -17,16 +16,13 @@ body {
     transition: background-color 0.3s;
     z-index: 1000; /* Para garantir que o botão fique acima de outros elementos */
 }
-
 .whatsapp-button:hover {
     background-color: #128C7E; /* Cor mais escura ao passar o mouse */
 }
-
 .whatsapp-icon {
     width: 30px; /* Ajuste o tamanho do ícone */
     height: 30px; /* Ajuste o tamanho do ícone */
 }
-
 .container {
     max-width: 800px;
     margin: auto;
@@ -36,28 +32,23 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s, color 0.3s;
 }
-
 h1 img {
     width: 30px; /* Tamanho da logo */
     height: 30px; /* Tamanho da logo */
     margin-right: 10px; /* Espaço entre a logo e o texto */
 }
-
 h1 {
     text-align: center;
     color: #007A33; /* Cor do Wolfsburg */
 }
-
 h2 {
     text-align: center;
     color: #333;
 }
-
 ul {
     list-style-type: none;
     padding: 0;
 }
-
 li {
     background: #e9ecef;
     margin: 10px 0;
@@ -67,71 +58,59 @@ li {
     justify-content: space-between;
     align-items: center;
 }
-
 .team {
     font-weight: bold;
     color: #007A33; /* Cor do Wolfsburg */
     display: flex;
     align-items: center;
 }
-
 .team img {
     width: 30px; /* Ajuste o tamanho da logo aqui */
     height: 30px; /* Ajuste o tamanho da logo aqui */
     margin-right: 10px;
 }
-
 .score {
     font-weight: bold;
     color: #333;
 }
-
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
-
 th, td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
 }
-
 th {
     background-color: #007A33; /* Cor do Wolfsburg */
     color: white;
 }
-
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
-
 .transfer-info {
     margin-top: 20px;
     padding: 15px;
-    background: #e9ecef;
+    background: #e ```css
+    9ecef;
     border-radius: 5px;
 }
-
 /* Estilos para o modo escuro */
 body.dark-mode {
     background-color: #333;
     color: #f4f4f4;
 }
-
 .container.dark-mode {
     background: #444;
 }
-
 th.dark-mode {
     background-color: #555;
 }
-
 li.dark-mode {
     background: #666;
 }
-
 .btn-toggle {
     position: fixed; /* Acoplado ao menu */
     top: 20px;
@@ -144,7 +123,6 @@ li.dark-mode {
     padding: 10px;
     z-index: 1001; /* Para garantir que o botão fique acima do menu */
 }
-
 .btn-toggle .bar {
     display: block;
     width: 25px;
@@ -152,38 +130,33 @@ li.dark-mode {
     background-color: white;
     margin: 4px 0;
 }
-
 .sidebar {
     position: fixed;
     top: 0;
     left: -250px; /* Escondido inicialmente */
-    width: 300px; /* Largura do menu */
-    height: 100%; /* Altura total da tela */
+    width: 250px;
+    height: 100%;
     background-color: #007A33; /* Cor do fundo do menu */
-    color: black; /* Cor do texto geral no menu */
-    padding: 20px; /* Espaçamento interno */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra para o menu */
-    transition: left 0.3s ease; /* Transição suave ao mostrar/esconder o menu */
-    z-index: 1000; /* Garante que o menu fique acima de outros elementos */
-    overflow-y: auto; /* Adiciona rolagem vertical se o conteúdo exceder a altura */
+    color: black; /* Cor da fonte do menu */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease; /* Transição suave */
+    z-index: 1000; /* Para garantir que o menu fique acima de outros elementos */
 }
-
 .sidebar h2 {
-    margin: 0 0 20px; /* Margem para o título do menu */
-    color: black; /* Cor do título do menu */
+    margin: 0 0 20px;
 }
-
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+.sidebar li {
+    margin: 15px 0;
+}
 .sidebar a {
-    color: black; /* Cor do texto dos links */
-    text-decoration: none; /* Remove sublinhado dos links */
+    color: black; /* Cor da fonte do menu */
+    text-decoration: none;
 }
-
 .sidebar a:hover {
-    text-decoration: underline; /* Sublinha o link ao passar o mouse */
-}
-
-@media (max-width: 768px) {
-    .sidebar {
-        width: 80%; /* Largura do menu em dispositivos móveis */
-    }
+    text-decoration: underline;
 }
