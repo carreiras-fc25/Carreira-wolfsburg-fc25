@@ -160,7 +160,7 @@ li.dark-mode {
     width: 300px; /* Largura do menu */
     height: 100%; /* Altura total da tela */
     background-color: #007A33; /* Cor do fundo do menu */
- color: black; /* Cor do texto */
+    color: #000000; /* Cor do texto */
     padding: 20px; /* Espaçamento interno */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra para o menu */
     transition: left 0.3s ease; /* Transição suave ao mostrar/esconder o menu */
