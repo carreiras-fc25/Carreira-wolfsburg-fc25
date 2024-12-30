@@ -5,25 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WOLFSBURG - Objetivos do Clube</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .intro {
-            text-align: center;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .intro h2 {
-            color: #007A33; /* Cor do Wolfsburg */
-        }
-
-        .intro p {
-            font-size: 1.1em;
-            color: #333;
-        }
-    </style>
 </head>
 <body>
     <div class="sidebar" id="sidebar">
@@ -41,18 +22,36 @@
             <li><a href="objetivos.html">Objetivos do Clube</a></li> <!-- Nova aba -->
         </ul>
     </div>
+    <a href="https://chat.whatsapp.com/HgvnG3mMkZMLoVRaH7zg9J" target="_blank" class="whatsapp-button">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+    </a>
+    <button class="btn-toggle" id="toggleSidebar">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
     <div class="container">
-        <div class="intro">
-            <h2>Objetivos do Clube</h2>
-            <p>Conheça os principais objetivos do VfL Wolfsburg para o futuro:</p>
-            <ul>
-                <li>Conquistar títulos nacionais e internacionais.</li>
-                <li>Desenvolver jovens talentos através da base.</li>
-                <li>Fortalecer a presença do clube na comunidade.</li>
-                <li>Promover um futebol sustentável e de qualidade.</li>
-                <li>Expandir a marca Wolfsburg globalmente.</li>
-            </ul>
-        </div>
+        <h1>
+            <img src="https://ssl.gstatic.com/onebox/media/sports/logos/nCdwmPlnAA041M4HDMzmkg_64x64.png" alt="Logo do Wolfsburg" style="width: 30px; height: 30px; margin-right: 10px;">
+            Objetivos do Clube</h1>
+        <p>O VfL Wolfsburg tem como principais objetivos:</p>
+        <ul>
+            <li>Conquistar títulos nacionais e internacionais.</li>
+            <li>Desenvolver jovens talentos através da base.</li>
+            <li>Fortalecer a presença do clube na comunidade.</li>
+            <li>Promover um futebol sustentável e de qualidade.</li>
+            <li>Expandir a marca Wolfsburg globalmente.</li>
+        </ul>
     </div>
+    <script>
+        document.getElementById('toggleSidebar').addEventListener('click', function() {
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar.style.left === '0px') {
+                sidebar.style.left = '-250px'; // Esconde o menu
+            } else {
+                sidebar.style.left = '0px'; // Mostra o menu
+            }
+        });
+    </script>
 </body>
 </html>
