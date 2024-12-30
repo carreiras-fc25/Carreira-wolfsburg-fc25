@@ -110,8 +110,7 @@ tr:nth-child(even) {
 .transfer-info {
     margin-top: 20px;
     padding: 15px;
-    background: #e ```css
-    9ecef;
+    background: #e9ecef;
     border-radius: 5px;
 }
 
@@ -158,36 +157,37 @@ li.dark-mode {
     position: fixed;
     top: 0;
     left: -250px; /* Escondido inicialmente */
-    width: 300px; /* Aumente a largura do menu */
-    height: 100%;
+    width: 300px; /* Largura do menu */
+    height: 100%; /* Altura total da tela */
     background-color: #007A33; /* Cor do fundo do menu */
-    color: white;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    transition: left 0.3s ease; /* Transição suave */
-    z-index: 1000; /* Para garantir que o menu fique acima de outros elementos */
+ color: white; /* Cor do texto */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra para o menu */
+    transition: left 0.3s ease; /* Transição suave ao mostrar/esconder o menu */
+    z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+    overflow-y: auto; /* Adiciona rolagem vertical se o conteúdo exceder a altura */
 }
 
 .sidebar h2 {
-    margin: 0 0 20px;
+    margin: 0 0 20px; /* Margem para o título do menu */
 }
 
 .sidebar ul {
-    list-style-type: none;
-    padding: 0;
+    list-style-type: none; /* Remove marcadores da lista */
+    padding: 0; /* Remove padding da lista */
 }
 
 .sidebar li {
-    margin: 15px 0;
+    margin: 15px 0; /* Margem entre os itens do menu */
 }
 
 .sidebar a {
-    color: black; /* Cor da fonte do menu */
-    text-decoration: none;
+    color: white; /* Cor do texto dos links */
+    text-decoration: none; /* Remove sublinhado dos links */
 }
 
 .sidebar a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Sublinha o link ao passar o mouse */
 }
 
 @media (max-width: 768px) {
