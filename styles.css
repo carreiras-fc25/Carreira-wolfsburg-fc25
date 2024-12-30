@@ -160,7 +160,7 @@ li.dark-mode {
     width: 300px; /* Largura do menu */
     height: 100%; /* Altura total da tela */
     background-color: #007A33; /* Cor do fundo do menu */
-    color: #000000; /* Cor do texto */
+    color: black; /* Cor do texto geral no menu */
     padding: 20px; /* Espaçamento interno */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra para o menu */
     transition: left 0.3s ease; /* Transição suave ao mostrar/esconder o menu */
@@ -170,15 +170,7 @@ li.dark-mode {
 
 .sidebar h2 {
     margin: 0 0 20px; /* Margem para o título do menu */
-}
-
-.sidebar ul {
-    list-style-type: none; /* Remove marcadores da lista */
-    padding: 0; /* Remove padding da lista */
-}
-
-.sidebar li {
-    margin: 15px 0; /* Margem entre os itens do menu */
+    color: black; /* Cor do título do menu */
 }
 
 .sidebar a {
